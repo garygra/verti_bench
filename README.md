@@ -39,7 +39,7 @@ There are two options for installing PyChrono on your computer. The first one us
 
 > Miniconda for Linux.
 
-> NVIDIA CUDA driver & Toolkit 11.8 (use `nvcc --version` & `nvidia-smi` to test installation).
+> Only NVIDIA CUDA driver & Toolkit 11.8 (use `nvcc --version` & `nvidia-smi` to test installation).
 
 ### A) Pychrono 9.0.1 from Conda 
 1. Add the `conda-forge` channel to the list of channels:
