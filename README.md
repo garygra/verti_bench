@@ -105,7 +105,7 @@ conda install conda-forge::gnuplot
 conda install -c conda-forge glfw
 ```
 
-4. Install the `PyChrono 9.0.1` conda package from [here](https://drive.google.com/file/d/1bEiBawKRFip1th70EcP5w6Hr-nh6rXMP/view?usp=sharing) in the assets folder:
+4. Install the `PyChrono 9.0.1` conda package from [here](https://drive.google.com/file/d/1bEiBawKRFip1th70EcP5w6Hr-nh6rXMP/view?usp=sharing) in the google drive:
 ```
 conda install pychrono-9.0.1-py39_1.tar.bz2
 ```
