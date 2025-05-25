@@ -35,7 +35,7 @@ There are two options for installing PyChrono on your computer. The first one us
 ### Dependencies:
 > Ubuntu 22.04 or above.
 
-> ROS Humble.
+> ROS2 Humble.
 
 > Miniconda for Linux.
 
