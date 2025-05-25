@@ -1,0 +1,1864 @@
+obstacle_density: medium
+obstacles:
+  rocks:
+  - position: {x: -36.1299899005646, y: -28.352013468304726, z: 4.716243363066001}
+    scale: 1.104020096556102
+  - position: {x: -7.308089268420275, y: 24.67786781016398, z: 4.469946737768162}
+    scale: 0.7769690110759107
+  - position: {x: 37.02815872075142, y: 15.244375387275845, z: 4.612240416409202}
+    scale: 0.9636253022388506
+  - position: {x: 32.06376830692625, y: -54.18872335565418, z: 4.539028758666221}
+    scale: 0.7420283230788145
+  - position: {x: -23.216413144478246, y: 38.5284871614658, z: 4.526406437085944}
+    scale: 1.048312668145471
+  - position: {x: 22.243964976743328, y: 43.38125130977328, z: 5.009997720245662}
+    scale: 0.9155432670903436
+  - position: {x: -45.58473841972912, y: 5.0382226032663695, z: 5.335892579631814}
+    scale: 0.8880656287545383
+  - position: {x: 3.245278634641757, y: 55.275556984180795, z: 5.363572746216818}
+    scale: 0.7419402097377372
+  - position: {x: 55.490022343226855, y: 11.411411485878652, z: 4.071390100551431}
+    scale: 1.0589579652043455
+  - position: {x: -16.233944817438708, y: -17.804090281545875, z: 4.321042715857158}
+    scale: 1.0501833239238256
+  - position: {x: -52.99634603244577, y: -14.529896022932505, z: 4.807254542455854}
+    scale: 0.77122536325122
+  - position: {x: 2.96872184508668, y: -5.1572340005488755, z: 4.767171847800322}
+    scale: 1.1878412504972573
+  - position: {x: 27.45304853958358, y: -34.75314256686371, z: 4.51931586100157}
+    scale: 0.9990742391194858
+  - position: {x: 8.538940981847222, y: -24.055427345730465, z: 4.805991759491469}
+    scale: 0.7612030414690143
+  - position: {x: 37.26751170523343, y: 0.8505502104488585, z: 6.155694228148089}
+    scale: 0.8635957527147835
+  - position: {x: 7.106289382476797, y: -52.210682512990104, z: 4.32703729990452}
+    scale: 0.785695003482515
+  - position: {x: -14.935842694852337, y: 10.889380208577109, z: 5.192101089835065}
+    scale: 0.8806450667819303
+  - position: {x: -9.217301296331144, y: -48.9738891544356, z: 4.694728417173945}
+    scale: 0.8411217062754929
+  - position: {x: 47.37389515645893, y: -16.893033607352017, z: 4.604630208738724}
+    scale: 1.167321372887642
+  - position: {x: 34.989016558177624, y: -20.20827043019402, z: 4.405296884467531}
+    scale: 0.9181580168297236
+  trees:
+  - position: {x: 39.4697288066334, y: 26.827805514757195, z: 4.858384724154851}
+  - position: {x: -19.402326373616496, y: -28.559608173435194, z: 5.0188725211936696}
+obstacles_flag: true
+positions:
+- goal: [-60.0, 7.34788079488412e-15, 1.0]
+  start: [60.0, 0.0, 1.0]
+- goal: [-48.54101966249685, -35.26711513754838, 1.0]
+  start: [48.54101966249685, 35.26711513754839, 1.0]
+- goal: [-18.541019662496854, -57.06339097770921, 1.0]
+  start: [18.541019662496847, 57.06339097770921, 1.0]
+- goal: [18.541019662496833, -57.06339097770922, 1.0]
+  start: [-18.54101966249684, 57.06339097770922, 1.0]
+- goal: [48.54101966249684, -35.2671151375484, 1.0]
+  start: [-48.54101966249684, 35.267115137548394, 1.0]
+- goal: [60.0, -1.469576158976824e-14, 1.0]
+  start: [-60.0, 7.34788079488412e-15, 1.0]
+- goal: [48.54101966249685, 35.26711513754837, 1.0]
+  start: [-48.54101966249685, -35.26711513754838, 1.0]
+- goal: [18.541019662496865, 57.06339097770921, 1.0]
+  start: [-18.541019662496854, -57.06339097770921, 1.0]
+- goal: [-18.541019662496826, 57.06339097770922, 1.0]
+  start: [18.541019662496833, -57.06339097770922, 1.0]
+- goal: [-48.541019662496836, 35.2671151375484, 1.0]
+  start: [48.54101966249684, -35.2671151375484, 1.0]
+terrain: {difficulty: high, is_flat: false, length: 64.5, max_height: 16.0, min_height: 0.0,
+  width: 64.5}
+terrain_type: rigid
+textures:
+- center_position: {x: -60.0, y: 60.0, z: 0.0}
+  friction: 0.7259843056038013
+  index: [0, 0]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -52.0, y: 60.0, z: 0.0}
+  friction: 0.9129799468950099
+  index: [0, 1]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -44.0, y: 60.0, z: 0.0}
+  friction: 0.9293428599454275
+  index: [0, 2]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -36.0, y: 60.0, z: 0.0}
+  friction: 0.9109298846241205
+  index: [0, 3]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -28.0, y: 60.0, z: 0.0}
+  friction: 0.774082825535805
+  index: [0, 4]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -20.0, y: 60.0, z: 0.0}
+  friction: 0.8040137379467294
+  index: [0, 5]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -12.0, y: 60.0, z: 0.0}
+  friction: 0.9902660551700069
+  index: [0, 6]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -4.0, y: 60.0, z: 0.0}
+  friction: 0.8032431512633224
+  index: [0, 7]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 4.0, y: 60.0, z: 0.0}
+  friction: 0.8754946857414616
+  index: [0, 8]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 12.0, y: 60.0, z: 0.0}
+  friction: 0.9143293658480033
+  index: [0, 9]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 20.0, y: 60.0, z: 0.0}
+  friction: 0.8815408407287533
+  index: [0, 10]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 28.0, y: 60.0, z: 0.0}
+  friction: 0.9015239572494509
+  index: [0, 11]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 36.0, y: 60.0, z: 0.0}
+  friction: 1.0
+  index: [0, 12]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 44.0, y: 60.0, z: 0.0}
+  friction: 0.872348494563161
+  index: [0, 13]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 52.0, y: 60.0, z: 0.0}
+  friction: 0.9025945747467962
+  index: [0, 14]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 60.0, y: 60.0, z: 0.0}
+  friction: 0.7395636925727281
+  index: [0, 15]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -60.0, y: 52.0, z: 0.0}
+  friction: 0.7850316086349461
+  index: [1, 0]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -52.0, y: 52.0, z: 0.0}
+  friction: 0.9158933591824893
+  index: [1, 1]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -44.0, y: 52.0, z: 0.0}
+  friction: 0.893593757601388
+  index: [1, 2]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -36.0, y: 52.0, z: 0.0}
+  friction: 0.8835743340004414
+  index: [1, 3]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -28.0, y: 52.0, z: 0.0}
+  friction: 0.8849239861365847
+  index: [1, 4]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -20.0, y: 52.0, z: 0.0}
+  friction: 0.7620642793713862
+  index: [1, 5]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -12.0, y: 52.0, z: 0.0}
+  friction: 0.9529034138458893
+  index: [1, 6]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -4.0, y: 52.0, z: 0.0}
+  friction: 0.8657853548394663
+  index: [1, 7]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 4.0, y: 52.0, z: 0.0}
+  friction: 0.7997301046182198
+  index: [1, 8]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 12.0, y: 52.0, z: 0.0}
+  friction: 0.8697241917136802
+  index: [1, 9]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 20.0, y: 52.0, z: 0.0}
+  friction: 0.8300191646728904
+  index: [1, 10]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 28.0, y: 52.0, z: 0.0}
+  friction: 0.7677360508750682
+  index: [1, 11]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 36.0, y: 52.0, z: 0.0}
+  friction: 0.8537916581840331
+  index: [1, 12]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 44.0, y: 52.0, z: 0.0}
+  friction: 0.8779854942512365
+  index: [1, 13]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 52.0, y: 52.0, z: 0.0}
+  friction: 0.8616112838167582
+  index: [1, 14]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 60.0, y: 52.0, z: 0.0}
+  friction: 0.8259871798828023
+  index: [1, 15]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -60.0, y: 44.0, z: 0.0}
+  friction: 0.7871661451029816
+  index: [2, 0]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -52.0, y: 44.0, z: 0.0}
+  friction: 0.8324768462922578
+  index: [2, 1]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -44.0, y: 44.0, z: 0.0}
+  friction: 0.7703281700602602
+  index: [2, 2]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -36.0, y: 44.0, z: 0.0}
+  friction: 0.8502180380005921
+  index: [2, 3]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -28.0, y: 44.0, z: 0.0}
+  friction: 0.9164461176281934
+  index: [2, 4]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -20.0, y: 44.0, z: 0.0}
+  friction: 0.8955804270218763
+  index: [2, 5]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -12.0, y: 44.0, z: 0.0}
+  friction: 0.8809935944728167
+  index: [2, 6]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -4.0, y: 44.0, z: 0.0}
+  friction: 0.9552355228865999
+  index: [2, 7]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 4.0, y: 44.0, z: 0.0}
+  friction: 0.882320888206398
+  index: [2, 8]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 12.0, y: 44.0, z: 0.0}
+  friction: 0.9104412927181763
+  index: [2, 9]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 20.0, y: 44.0, z: 0.0}
+  friction: 0.9195065486206501
+  index: [2, 10]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 28.0, y: 44.0, z: 0.0}
+  friction: 0.9779851929500886
+  index: [2, 11]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 36.0, y: 44.0, z: 0.0}
+  friction: 0.9092183690030736
+  index: [2, 12]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 44.0, y: 44.0, z: 0.0}
+  friction: 0.8739089100172558
+  index: [2, 13]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 52.0, y: 44.0, z: 0.0}
+  friction: 0.8361615751716414
+  index: [2, 14]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 60.0, y: 44.0, z: 0.0}
+  friction: 0.7904151137672731
+  index: [2, 15]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -60.0, y: 36.0, z: 0.0}
+  friction: 0.8913730370440477
+  index: [3, 0]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -52.0, y: 36.0, z: 0.0}
+  friction: 0.9061741870529193
+  index: [3, 1]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -44.0, y: 36.0, z: 0.0}
+  friction: 0.7624246792845691
+  index: [3, 2]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -36.0, y: 36.0, z: 0.0}
+  friction: 0.9832676896464917
+  index: [3, 3]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -28.0, y: 36.0, z: 0.0}
+  friction: 0.8788942307214818
+  index: [3, 4]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -20.0, y: 36.0, z: 0.0}
+  friction: 0.9202842383428395
+  index: [3, 5]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -12.0, y: 36.0, z: 0.0}
+  friction: 0.6040966257070342
+  index: [3, 6]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -4.0, y: 36.0, z: 0.0}
+  friction: 0.9370120527467304
+  index: [3, 7]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 4.0, y: 36.0, z: 0.0}
+  friction: 0.8419508255114485
+  index: [3, 8]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 12.0, y: 36.0, z: 0.0}
+  friction: 0.940493318032656
+  index: [3, 9]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 20.0, y: 36.0, z: 0.0}
+  friction: 0.6879182934728998
+  index: [3, 10]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 28.0, y: 36.0, z: 0.0}
+  friction: 0.9083520525698197
+  index: [3, 11]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 36.0, y: 36.0, z: 0.0}
+  friction: 0.95262469293613
+  index: [3, 12]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 44.0, y: 36.0, z: 0.0}
+  friction: 0.9676169447521101
+  index: [3, 13]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 52.0, y: 36.0, z: 0.0}
+  friction: 1.0
+  index: [3, 14]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 60.0, y: 36.0, z: 0.0}
+  friction: 0.921215220312586
+  index: [3, 15]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -60.0, y: 28.0, z: 0.0}
+  friction: 0.857084108260647
+  index: [4, 0]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -52.0, y: 28.0, z: 0.0}
+  friction: 0.6454262025137844
+  index: [4, 1]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -44.0, y: 28.0, z: 0.0}
+  friction: 0.831304454364062
+  index: [4, 2]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -36.0, y: 28.0, z: 0.0}
+  friction: 0.8085800052393239
+  index: [4, 3]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -28.0, y: 28.0, z: 0.0}
+  friction: 0.8122050362892052
+  index: [4, 4]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -20.0, y: 28.0, z: 0.0}
+  friction: 0.945077997122376
+  index: [4, 5]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -12.0, y: 28.0, z: 0.0}
+  friction: 0.9081132162984924
+  index: [4, 6]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -4.0, y: 28.0, z: 0.0}
+  friction: 0.7300282189554941
+  index: [4, 7]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 4.0, y: 28.0, z: 0.0}
+  friction: 0.9485937629152302
+  index: [4, 8]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 12.0, y: 28.0, z: 0.0}
+  friction: 1.0
+  index: [4, 9]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 20.0, y: 28.0, z: 0.0}
+  friction: 0.890323215306255
+  index: [4, 10]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 28.0, y: 28.0, z: 0.0}
+  friction: 0.8604135070847497
+  index: [4, 11]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 36.0, y: 28.0, z: 0.0}
+  friction: 0.786126212265043
+  index: [4, 12]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 44.0, y: 28.0, z: 0.0}
+  friction: 0.7851092017802274
+  index: [4, 13]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 52.0, y: 28.0, z: 0.0}
+  friction: 0.6996998276547551
+  index: [4, 14]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 60.0, y: 28.0, z: 0.0}
+  friction: 0.9112967529163797
+  index: [4, 15]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -60.0, y: 20.0, z: 0.0}
+  friction: 0.8031733857990787
+  index: [5, 0]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -52.0, y: 20.0, z: 0.0}
+  friction: 0.8330425704960194
+  index: [5, 1]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -44.0, y: 20.0, z: 0.0}
+  friction: 0.7182946143263512
+  index: [5, 2]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -36.0, y: 20.0, z: 0.0}
+  friction: 0.8940001298276279
+  index: [5, 3]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -28.0, y: 20.0, z: 0.0}
+  friction: 0.9519255104352294
+  index: [5, 4]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -20.0, y: 20.0, z: 0.0}
+  friction: 0.8260039854050144
+  index: [5, 5]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -12.0, y: 20.0, z: 0.0}
+  friction: 0.9534940148241664
+  index: [5, 6]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -4.0, y: 20.0, z: 0.0}
+  friction: 0.9183466613878766
+  index: [5, 7]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 4.0, y: 20.0, z: 0.0}
+  friction: 0.8879036088761001
+  index: [5, 8]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 12.0, y: 20.0, z: 0.0}
+  friction: 0.8891092411928634
+  index: [5, 9]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 20.0, y: 20.0, z: 0.0}
+  friction: 0.8972143333953575
+  index: [5, 10]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 28.0, y: 20.0, z: 0.0}
+  friction: 0.845409279504707
+  index: [5, 11]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 36.0, y: 20.0, z: 0.0}
+  friction: 0.6766060402660147
+  index: [5, 12]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 44.0, y: 20.0, z: 0.0}
+  friction: 0.8049032338518349
+  index: [5, 13]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 52.0, y: 20.0, z: 0.0}
+  friction: 0.894996657407263
+  index: [5, 14]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 60.0, y: 20.0, z: 0.0}
+  friction: 0.7262454696566487
+  index: [5, 15]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -60.0, y: 12.0, z: 0.0}
+  friction: 0.9989392424236476
+  index: [6, 0]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -52.0, y: 12.0, z: 0.0}
+  friction: 0.8498225836248227
+  index: [6, 1]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -44.0, y: 12.0, z: 0.0}
+  friction: 0.7102516724869696
+  index: [6, 2]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -36.0, y: 12.0, z: 0.0}
+  friction: 0.9051284403862063
+  index: [6, 3]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -28.0, y: 12.0, z: 0.0}
+  friction: 0.8487829762165415
+  index: [6, 4]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -20.0, y: 12.0, z: 0.0}
+  friction: 0.923750968984609
+  index: [6, 5]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -12.0, y: 12.0, z: 0.0}
+  friction: 0.992814249621331
+  index: [6, 6]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -4.0, y: 12.0, z: 0.0}
+  friction: 0.8461949653431993
+  index: [6, 7]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 4.0, y: 12.0, z: 0.0}
+  friction: 0.9015747080352176
+  index: [6, 8]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 12.0, y: 12.0, z: 0.0}
+  friction: 0.7509401400244596
+  index: [6, 9]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 20.0, y: 12.0, z: 0.0}
+  friction: 0.9097809404101813
+  index: [6, 10]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 28.0, y: 12.0, z: 0.0}
+  friction: 0.8584971926817976
+  index: [6, 11]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 36.0, y: 12.0, z: 0.0}
+  friction: 0.7252322225003834
+  index: [6, 12]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 44.0, y: 12.0, z: 0.0}
+  friction: 0.7517512864762421
+  index: [6, 13]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 52.0, y: 12.0, z: 0.0}
+  friction: 0.7897881469361439
+  index: [6, 14]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 60.0, y: 12.0, z: 0.0}
+  friction: 0.7892932887159899
+  index: [6, 15]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -60.0, y: 4.0, z: 0.0}
+  friction: 0.8812693250004358
+  index: [7, 0]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -52.0, y: 4.0, z: 0.0}
+  friction: 0.8233475802592247
+  index: [7, 1]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -44.0, y: 4.0, z: 0.0}
+  friction: 0.7742812229202158
+  index: [7, 2]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -36.0, y: 4.0, z: 0.0}
+  friction: 0.6778700156656465
+  index: [7, 3]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -28.0, y: 4.0, z: 0.0}
+  friction: 0.7677594673254298
+  index: [7, 4]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -20.0, y: 4.0, z: 0.0}
+  friction: 0.809106168188895
+  index: [7, 5]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -12.0, y: 4.0, z: 0.0}
+  friction: 1.0
+  index: [7, 6]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -4.0, y: 4.0, z: 0.0}
+  friction: 0.7718921822844709
+  index: [7, 7]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 4.0, y: 4.0, z: 0.0}
+  friction: 0.9470138116908093
+  index: [7, 8]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 12.0, y: 4.0, z: 0.0}
+  friction: 0.8955551028980451
+  index: [7, 9]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 20.0, y: 4.0, z: 0.0}
+  friction: 0.8608535649133059
+  index: [7, 10]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 28.0, y: 4.0, z: 0.0}
+  friction: 0.6129793807498483
+  index: [7, 11]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 36.0, y: 4.0, z: 0.0}
+  friction: 0.9397077606214038
+  index: [7, 12]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 44.0, y: 4.0, z: 0.0}
+  friction: 0.9255518601703489
+  index: [7, 13]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 52.0, y: 4.0, z: 0.0}
+  friction: 0.8204065007738631
+  index: [7, 14]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 60.0, y: 4.0, z: 0.0}
+  friction: 0.8194152213123175
+  index: [7, 15]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -60.0, y: -4.0, z: 0.0}
+  friction: 0.9391777921168406
+  index: [8, 0]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -52.0, y: -4.0, z: 0.0}
+  friction: 0.8472136493147002
+  index: [8, 1]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -44.0, y: -4.0, z: 0.0}
+  friction: 0.8220049541461959
+  index: [8, 2]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -36.0, y: -4.0, z: 0.0}
+  friction: 0.9095446010874138
+  index: [8, 3]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -28.0, y: -4.0, z: 0.0}
+  friction: 0.8902831979987601
+  index: [8, 4]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -20.0, y: -4.0, z: 0.0}
+  friction: 0.7689491832393359
+  index: [8, 5]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -12.0, y: -4.0, z: 0.0}
+  friction: 0.7655834643857503
+  index: [8, 6]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -4.0, y: -4.0, z: 0.0}
+  friction: 0.9434662979214566
+  index: [8, 7]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 4.0, y: -4.0, z: 0.0}
+  friction: 1.0
+  index: [8, 8]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 12.0, y: -4.0, z: 0.0}
+  friction: 0.826501118456424
+  index: [8, 9]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 20.0, y: -4.0, z: 0.0}
+  friction: 0.7870511435145777
+  index: [8, 10]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 28.0, y: -4.0, z: 0.0}
+  friction: 0.7945312954447288
+  index: [8, 11]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 36.0, y: -4.0, z: 0.0}
+  friction: 0.9141830847419057
+  index: [8, 12]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 44.0, y: -4.0, z: 0.0}
+  friction: 0.9014824159672703
+  index: [8, 13]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 52.0, y: -4.0, z: 0.0}
+  friction: 0.8742229489273959
+  index: [8, 14]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 60.0, y: -4.0, z: 0.0}
+  friction: 0.9324497626934294
+  index: [8, 15]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -60.0, y: -12.0, z: 0.0}
+  friction: 0.9184456197553443
+  index: [9, 0]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -52.0, y: -12.0, z: 0.0}
+  friction: 0.9330114835253827
+  index: [9, 1]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -44.0, y: -12.0, z: 0.0}
+  friction: 0.8980561502307137
+  index: [9, 2]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -36.0, y: -12.0, z: 0.0}
+  friction: 0.8758054313974925
+  index: [9, 3]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -28.0, y: -12.0, z: 0.0}
+  friction: 0.8031374883708472
+  index: [9, 4]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -20.0, y: -12.0, z: 0.0}
+  friction: 0.8156417550287555
+  index: [9, 5]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -12.0, y: -12.0, z: 0.0}
+  friction: 0.8405084005518396
+  index: [9, 6]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -4.0, y: -12.0, z: 0.0}
+  friction: 0.8255094666357891
+  index: [9, 7]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 4.0, y: -12.0, z: 0.0}
+  friction: 0.9270589724615995
+  index: [9, 8]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 12.0, y: -12.0, z: 0.0}
+  friction: 0.9167175788785358
+  index: [9, 9]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 20.0, y: -12.0, z: 0.0}
+  friction: 0.8464242432709702
+  index: [9, 10]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 28.0, y: -12.0, z: 0.0}
+  friction: 0.9210890608061172
+  index: [9, 11]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 36.0, y: -12.0, z: 0.0}
+  friction: 0.7455875696179903
+  index: [9, 12]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 44.0, y: -12.0, z: 0.0}
+  friction: 0.763640361582006
+  index: [9, 13]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 52.0, y: -12.0, z: 0.0}
+  friction: 0.8635857757565257
+  index: [9, 14]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 60.0, y: -12.0, z: 0.0}
+  friction: 0.7966868538899246
+  index: [9, 15]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -60.0, y: -20.0, z: 0.0}
+  friction: 0.7289770997237821
+  index: [10, 0]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -52.0, y: -20.0, z: 0.0}
+  friction: 0.9244218949736016
+  index: [10, 1]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -44.0, y: -20.0, z: 0.0}
+  friction: 0.9827133467675997
+  index: [10, 2]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -36.0, y: -20.0, z: 0.0}
+  friction: 0.8513378311625186
+  index: [10, 3]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -28.0, y: -20.0, z: 0.0}
+  friction: 0.8804486406490147
+  index: [10, 4]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -20.0, y: -20.0, z: 0.0}
+  friction: 0.8849329166952781
+  index: [10, 5]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -12.0, y: -20.0, z: 0.0}
+  friction: 0.7604210719784499
+  index: [10, 6]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -4.0, y: -20.0, z: 0.0}
+  friction: 0.8024650593130211
+  index: [10, 7]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 4.0, y: -20.0, z: 0.0}
+  friction: 0.8981849932783001
+  index: [10, 8]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 12.0, y: -20.0, z: 0.0}
+  friction: 0.720169377328546
+  index: [10, 9]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 20.0, y: -20.0, z: 0.0}
+  friction: 0.8472380081692481
+  index: [10, 10]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 28.0, y: -20.0, z: 0.0}
+  friction: 0.84272127968861
+  index: [10, 11]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 36.0, y: -20.0, z: 0.0}
+  friction: 0.777696612076203
+  index: [10, 12]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 44.0, y: -20.0, z: 0.0}
+  friction: 0.9091648871600976
+  index: [10, 13]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 52.0, y: -20.0, z: 0.0}
+  friction: 0.8085120641218665
+  index: [10, 14]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 60.0, y: -20.0, z: 0.0}
+  friction: 0.9213683678112026
+  index: [10, 15]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -60.0, y: -28.0, z: 0.0}
+  friction: 0.6632854160023225
+  index: [11, 0]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -52.0, y: -28.0, z: 0.0}
+  friction: 0.9750654758576194
+  index: [11, 1]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -44.0, y: -28.0, z: 0.0}
+  friction: 0.749484624313406
+  index: [11, 2]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -36.0, y: -28.0, z: 0.0}
+  friction: 0.8314552090495363
+  index: [11, 3]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -28.0, y: -28.0, z: 0.0}
+  friction: 0.8739648193272492
+  index: [11, 4]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -20.0, y: -28.0, z: 0.0}
+  friction: 0.8541847414279553
+  index: [11, 5]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -12.0, y: -28.0, z: 0.0}
+  friction: 0.9172367942687294
+  index: [11, 6]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -4.0, y: -28.0, z: 0.0}
+  friction: 0.7685571899303392
+  index: [11, 7]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 4.0, y: -28.0, z: 0.0}
+  friction: 0.8838746677504228
+  index: [11, 8]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 12.0, y: -28.0, z: 0.0}
+  friction: 0.7331186040629953
+  index: [11, 9]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 20.0, y: -28.0, z: 0.0}
+  friction: 0.8710140103020296
+  index: [11, 10]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 28.0, y: -28.0, z: 0.0}
+  friction: 0.7260618267013356
+  index: [11, 11]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 36.0, y: -28.0, z: 0.0}
+  friction: 0.9424351974142903
+  index: [11, 12]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 44.0, y: -28.0, z: 0.0}
+  friction: 0.7999706925251197
+  index: [11, 13]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 52.0, y: -28.0, z: 0.0}
+  friction: 0.8289141692669186
+  index: [11, 14]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 60.0, y: -28.0, z: 0.0}
+  friction: 0.8137807350820309
+  index: [11, 15]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -60.0, y: -36.0, z: 0.0}
+  friction: 0.9848212450348228
+  index: [12, 0]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -52.0, y: -36.0, z: 0.0}
+  friction: 0.7892328561248007
+  index: [12, 1]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -44.0, y: -36.0, z: 0.0}
+  friction: 0.8343495752442249
+  index: [12, 2]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -36.0, y: -36.0, z: 0.0}
+  friction: 0.91306087509062
+  index: [12, 3]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -28.0, y: -36.0, z: 0.0}
+  friction: 0.931323320096837
+  index: [12, 4]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -20.0, y: -36.0, z: 0.0}
+  friction: 0.8241460911264835
+  index: [12, 5]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -12.0, y: -36.0, z: 0.0}
+  friction: 0.8345667987726811
+  index: [12, 6]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -4.0, y: -36.0, z: 0.0}
+  friction: 0.8807355113523756
+  index: [12, 7]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 4.0, y: -36.0, z: 0.0}
+  friction: 0.8763002455739097
+  index: [12, 8]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 12.0, y: -36.0, z: 0.0}
+  friction: 0.9735370279506836
+  index: [12, 9]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 20.0, y: -36.0, z: 0.0}
+  friction: 0.7843878642564943
+  index: [12, 10]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 28.0, y: -36.0, z: 0.0}
+  friction: 0.875174662892117
+  index: [12, 11]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 36.0, y: -36.0, z: 0.0}
+  friction: 0.7394296854961954
+  index: [12, 12]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 44.0, y: -36.0, z: 0.0}
+  friction: 0.8303563878133408
+  index: [12, 13]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 52.0, y: -36.0, z: 0.0}
+  friction: 0.7990609489644273
+  index: [12, 14]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 60.0, y: -36.0, z: 0.0}
+  friction: 0.8281725202143977
+  index: [12, 15]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -60.0, y: -44.0, z: 0.0}
+  friction: 0.7390184902302218
+  index: [13, 0]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -52.0, y: -44.0, z: 0.0}
+  friction: 0.8096789328530758
+  index: [13, 1]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -44.0, y: -44.0, z: 0.0}
+  friction: 0.8633930023826357
+  index: [13, 2]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -36.0, y: -44.0, z: 0.0}
+  friction: 0.8907487276079283
+  index: [13, 3]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -28.0, y: -44.0, z: 0.0}
+  friction: 0.708038218305195
+  index: [13, 4]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -20.0, y: -44.0, z: 0.0}
+  friction: 0.7635933965543746
+  index: [13, 5]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -12.0, y: -44.0, z: 0.0}
+  friction: 0.8359537610135576
+  index: [13, 6]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -4.0, y: -44.0, z: 0.0}
+  friction: 0.8619790150233134
+  index: [13, 7]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 4.0, y: -44.0, z: 0.0}
+  friction: 0.9306525379207649
+  index: [13, 8]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 12.0, y: -44.0, z: 0.0}
+  friction: 0.7001037019951215
+  index: [13, 9]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 20.0, y: -44.0, z: 0.0}
+  friction: 0.8347234755028888
+  index: [13, 10]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 28.0, y: -44.0, z: 0.0}
+  friction: 0.861220148407814
+  index: [13, 11]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 36.0, y: -44.0, z: 0.0}
+  friction: 0.8349161921878243
+  index: [13, 12]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 44.0, y: -44.0, z: 0.0}
+  friction: 0.8732995197871787
+  index: [13, 13]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 52.0, y: -44.0, z: 0.0}
+  friction: 0.8033134944065505
+  index: [13, 14]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 60.0, y: -44.0, z: 0.0}
+  friction: 0.9246011234430098
+  index: [13, 15]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -60.0, y: -52.0, z: 0.0}
+  friction: 0.7669380067917755
+  index: [14, 0]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -52.0, y: -52.0, z: 0.0}
+  friction: 0.8933661277295042
+  index: [14, 1]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -44.0, y: -52.0, z: 0.0}
+  friction: 0.9212323521389532
+  index: [14, 2]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -36.0, y: -52.0, z: 0.0}
+  friction: 0.9420083617189395
+  index: [14, 3]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -28.0, y: -52.0, z: 0.0}
+  friction: 0.9445765201861
+  index: [14, 4]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -20.0, y: -52.0, z: 0.0}
+  friction: 0.8520909184667437
+  index: [14, 5]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -12.0, y: -52.0, z: 0.0}
+  friction: 0.9216482968562483
+  index: [14, 6]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -4.0, y: -52.0, z: 0.0}
+  friction: 0.9349895651231981
+  index: [14, 7]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 4.0, y: -52.0, z: 0.0}
+  friction: 0.8372135141136438
+  index: [14, 8]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 12.0, y: -52.0, z: 0.0}
+  friction: 0.790620465885104
+  index: [14, 9]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 20.0, y: -52.0, z: 0.0}
+  friction: 0.864367506100251
+  index: [14, 10]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 28.0, y: -52.0, z: 0.0}
+  friction: 0.9587634261253587
+  index: [14, 11]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 36.0, y: -52.0, z: 0.0}
+  friction: 0.8502710217090759
+  index: [14, 12]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 44.0, y: -52.0, z: 0.0}
+  friction: 0.8395838340281223
+  index: [14, 13]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 52.0, y: -52.0, z: 0.0}
+  friction: 0.8886199505190038
+  index: [14, 14]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 60.0, y: -52.0, z: 0.0}
+  friction: 0.8312262536095828
+  index: [14, 15]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -60.0, y: -60.0, z: 0.0}
+  friction: 0.9357890859749106
+  index: [15, 0]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -52.0, y: -60.0, z: 0.0}
+  friction: 0.8700457288641898
+  index: [15, 1]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -44.0, y: -60.0, z: 0.0}
+  friction: 0.871916043264563
+  index: [15, 2]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -36.0, y: -60.0, z: 0.0}
+  friction: 0.8119576828942532
+  index: [15, 3]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -28.0, y: -60.0, z: 0.0}
+  friction: 0.8517296995394632
+  index: [15, 4]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -20.0, y: -60.0, z: 0.0}
+  friction: 0.8945534666533556
+  index: [15, 5]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -12.0, y: -60.0, z: 0.0}
+  friction: 0.8248126194469556
+  index: [15, 6]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: -4.0, y: -60.0, z: 0.0}
+  friction: 0.9235442301930861
+  index: [15, 7]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 4.0, y: -60.0, z: 0.0}
+  friction: 0.8516385860272971
+  index: [15, 8]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 12.0, y: -60.0, z: 0.0}
+  friction: 0.9258002826613208
+  index: [15, 9]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 20.0, y: -60.0, z: 0.0}
+  friction: 0.7972264395976214
+  index: [15, 10]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 28.0, y: -60.0, z: 0.0}
+  friction: 0.8635571381176246
+  index: [15, 11]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 36.0, y: -60.0, z: 0.0}
+  friction: 0.9161256956749078
+  index: [15, 12]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 44.0, y: -60.0, z: 0.0}
+  friction: 0.7892308890926583
+  index: [15, 13]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 52.0, y: -60.0, z: 0.0}
+  friction: 0.9398941220691103
+  index: [15, 14]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
+- center_position: {x: 60.0, y: -60.0, z: 0.0}
+  friction: 0.8348863091631371
+  index: [15, 15]
+  is_deformable: false
+  restitution: 0.01
+  terrain_type: concrete
+  texture_file: terrain/textures/rigid/concrete/concrete1.jpg
