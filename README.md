@@ -29,6 +29,10 @@ Robotics: Science and Systems (RSS) 2025
 - [ ] Release different scale vehicles
 - [ ] Release datasets from expert demonstration, random exploration, failure cases
 
+# Introduction
+Verti-Bench, a general and scalable off-road mobility benchmark that focuses on extremely rugged, vertically challenging terrain with a variety of unstructured off-road features. The main goal of Verti-Bench is to directly compare the performances of different off-road mobility systems. Based on a high-fidelity multi-physics
+dynamics simulator, [Chrono](https://projectchrono.org/), Verti-Bench encapsulates variations in four orthogonal dimensions: elevation, semantics, vehicle scalability and obstacles.
+
 # Installation
 There are two options for installing PyChrono on your computer. The first one uses a prebuilt conda packages and is the recommended way. The second one is for users who need to build the full library from the C++ source.
 
@@ -39,7 +43,7 @@ There are two options for installing PyChrono on your computer. The first one us
 
 > Miniconda for Linux.
 
-> Only NVIDIA CUDA driver & Toolkit 11.8 (use `nvcc --version` & `nvidia-smi` to test installation).
+> Only NVIDIA CUDA driver & Toolkit 11.8 for `Chrono::sensor` module and RL training (use `nvcc --version` & `nvidia-smi` to test installation).
 
 ### A) Pychrono 9.0.1 from Conda 
 1. Add the `conda-forge` channel to the list of channels:
@@ -110,7 +114,7 @@ conda install -c conda-forge glfw
 conda install pychrono-9.0.1-py39_1.tar.bz2
 ```
 
-5. After clone this codebase, add Verti-Bench data directory to path:
+5. After clone this codebase (assuming you cloned this repo to `<YOUR_HOME_DIR>/Documents/verti_bench/`; adjust the path below if you cloned it elsewhere), add Verti-Bench data directory to `.bashrc`:
 ```
 echo 'export CHRONO_DATA_DIR=$HOME/Documents/verti_bench/envs/data/' >> ~/.bashrc
 echo 'export PYTHONPATH=$PYTHONPATH:$HOME/Documents/' >> ~/.bashrc
@@ -121,8 +125,8 @@ echo 'export PYTHONPATH=$PYTHONPATH:$HOME/Documents/' >> ~/.bashrc
 sudo apt install ros-humble-grid-map-msgs ros-humble-geometry-msgs
 ```
 
-### B) Pychrono 9.0.1 from C++ API
-1. Clone the 901 branch from [here](https://github.com/madhan001/chrono/tree/901) and update the submodule:
+### B) Pychrono 9.0.1 from Source
+1. Clone the 901 branch from [here](https://github.com/madhan001/chrono/tree/901) (assuming you cloned `chrono` repo to `<YOUR_HOME_DIR>/Documents/chrono`) and update the submodule:
 ```
 git clone -b 901 https://github.com/madhan001/chrono.git
 cd chrono
@@ -138,7 +142,7 @@ sudo snap install cmake --classic
 sudo apt update
 sudo apt install swig
 ```
-- Install necessary `gcc` tools
+- Install necessary `gcc` tools: make sure GCC version 4.9 or newer
 ```
 sudo apt update
 sudo apt install gcc
@@ -181,12 +185,12 @@ conda install -c conda-forge numpy=1.24.0
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 pip install pyyaml scipy
 ```
-- **Deactivate conda virtual env**, install MPI (Message Passing Interface) for `Chrono::Synchrono` and `Chrono::Vehicle` modules
+- **Deactivate conda virtual env** to allow system-wide installation of MPI (Message Passing Interface) for `Chrono::Synchrono` and `Chrono::Vehicle` modules
 ```
 sudo apt-get update
 sudo apt-get install libopenmpi-dev openmpi-bin
 ```
-- Create libraries folder in chrono folder for third-party dependencies
+- Create libraries folder in chrono folder (`<YOUR_HOME_DIR>/Documents/chrono`) for third-party dependencies
 ```
 cd chrono
 mkdir libraries
@@ -289,6 +293,220 @@ Click `ENABLE_MODULE_MULTICORE` and configure button, then set entries as below
 - `Chrono::gpu` module: click `ENABLE_MODULE_GPU` and configure button
 
 After choosing all above modules, click **configure** and **generate** buttons. Build files are now available in the `chrono_build` directory. More details can visit [here](https://api.projectchrono.org/tutorial_install_chrono.html).
+
+- Below are all the cmake args for a successful compilation as a reference:
+
+<p align="center">
+    <img src="assets/cmake-gui1.png" height=350>
+</p>
+<p align="center">
+    <img src="assets/cmake-gui2.png" height=232>
+</p>
+
+<details>
+<summary>CMake Logs:</summary>
+This is cmake-gui concise output as a reference:
+
+```bash
+We are on a Linux system
+The host processor is x86_64
+Building for a Linux system
+The target processor is x86_64
+Using a single configuration generator (Unix Makefiles)
+Data directory copied to: /home/chrono/Documents/chrono_build/data/
+Binaries will be created in /home/chrono/Documents/chrono_build/bin/
+GCC version:  11.4.0
+C++14 compiler support:  TRUE
+C++17 compiler support:  TRUE
+Searching for Threads...
+  Thread library:      
+  Using Win32 threads? 
+  Using pthreads?      1
+Searching for OpenMP...
+  OpenMP version:   4.0
+  OpenMP CXX flags: -fopenmp
+  OpenMP C flags:   -fopenmp
+  OpenMP includes:  
+  OpenMP library:   
+  OpenMP libraries: /usr/lib/gcc/x86_64-linux-gnu/11/libgomp.so;/usr/lib/x86_64-linux-gnu/libpthread.a
+Testing SIMD capabilities...
+Using automatic native flag for SIMD optimization
+Searching for Eigen3...
+  Eigen3 version: 3.4.0
+  Eigen3 include directory: /home/chrono/Documents/chrono/libraries/eigen/include/eigen3
+Searching for MPI...
+  MPI compiler:      /usr/bin/mpicxx
+  MPI compile flags: 
+  MPI include path:  /usr/lib/x86_64-linux-gnu/openmpi/include;/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi
+  MPI link flags:    
+  MPI libraries:     /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so;/usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so
+
+  MPIEXEC:               /usr/bin/mpiexec
+  MPIEXEC_NUMPROC_FLAG:  -n
+  MPIEXEC_PREFLAGS:      
+  MPIEXEC_POSTFLAGS:     
+Searching for CUDA...
+CMake Warning (dev) at src/CMakeLists.txt:344 (find_package):
+  Policy CMP0146 is not set: The FindCUDA module is removed.  Run "cmake
+  --help-policy CMP0146" for policy details.  Use the cmake_policy command to
+  set the policy and suppress this warning.
+
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+  CUDA version:          11.8
+  CUDA toolkit root dir: /usr/local/cuda-11.8
+  CUDA binary dir:       /usr/local/cuda-11.8/bin
+Compiling for CUDA architecture: 6.0
+  CUDA compile flags:    -std c++17 -Xcompiler -std=c++17;--compiler-options;-fPIC;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_60,code=compute_60
+Searching for Thrust...
+  Thrust version:     1.15.1
+  Thrust include dir: /usr/local/cuda/include
+Searching for CUB...
+Warning level set to -Wall
+Compiler and linker flags:
+  CMAKE_CXX_FLAGS:           -fopenmp   -fopenmp -march=native
+  CMAKE_CXX_FLAGS_DEBUG:   -g   -fopenmp -march=native -D_DEBUG -DDEBUG
+  CMAKE_CXX_FLAGS_RELEASE: -O3 -DNDEBUG   -fopenmp -march=native -DNDEBUG
+  Linke flags LIB:         
+  Linke flags EXE:         
+  CUDA flags:               -std c++17 -Xcompiler -std=c++17;--compiler-options;-fPIC;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_60,code=compute_60
+
+==== Chrono Engine core module ====
+
+Chrono includes: /home/chrono/Documents/chrono/src/chrono;/home/chrono/Documents/chrono/src/chrono/collision/bullet;/home/chrono/Documents/chrono/src/chrono/collision/gimpact;/home/chrono/Documents/chrono/src/chrono/../chrono_thirdparty/HACD;/home/chrono/Documents/chrono/src/chrono/../chrono_thirdparty/HACDv2
+Adding internal multicore collision detection library.
+
+==== Chrono Parsers module ====
+
+Found URDFDOM and dependencies.
+  URDFDOM include dirs: /home/chrono/Documents/chrono/libraries/urdf/lib/urdfdom/cmake/../../../include/urdfdom;/home/chrono/Documents/chrono/libraries/urdf/lib/urdfdom_headers/cmake/../../../include/urdfdom_headers
+Found ROS 2.
+  ROS 2 distro is "humble"
+CMake Warning (dev) at src/chrono_parsers/CMakeLists.txt:64 (find_package):
+  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+  the cmake_policy command to set the policy and suppress this warning.
+
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at src/chrono_parsers/CMakeLists.txt:65 (find_package):
+  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+  the cmake_policy command to set the policy and suppress this warning.
+
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+Found Python and dependencies.
+  Python directory:   /home/chrono/miniconda3/envs/chrono9/bin
+  Python include dir: /home/chrono/miniconda3/envs/chrono9/include/python3.9
+  Python libraries:   /home/chrono/miniconda3/envs/chrono9/lib/libpython3.9.so
+
+==== Chrono Irrlicht module ====
+
+Include directory: /usr/include/irrlicht
+Library:           /usr/lib/x86_64-linux-gnu/libIrrlicht.so;-lXxf86vm;-lglut;-lX11;-lGL
+
+==== Chrono Multicore module ====
+
+Blaze version file: /home/chrono/Documents/chrono/libraries/blaze-3.8/blaze/system/Version.h
+Blaze version: 3.8
+Include dirs: /home/chrono/Documents/chrono/libraries/blaze-3.8;/usr/local/cuda/include
+
+==== Chrono OpenGL module ====
+
+OpenGL found: TRUE
+GLM found:    TRUE
+GLEW found:   TRUE
+GLFW3 found:  1
+OpenGL libraries: /usr/lib/x86_64-linux-gnu/libOpenGL.so;/usr/lib/x86_64-linux-gnu/libGLX.so;/usr/lib/x86_64-linux-gnu/libGLU.so
+GLM_INCLUDE_DIRS: /home/chrono/Documents/chrono/libraries/gl/include/glm
+GLEW config dir:  /home/chrono/Documents/chrono/libraries/gl/lib/cmake/glew
+GLFW3 config dir: /home/chrono/Documents/chrono/libraries/gl/lib/cmake/glfw3
+
+==== Chrono GPU module ====
+
+NVCC Release flags are -Xcompiler -O3 -Xptxas -O3 -Xcompiler -DNDEBUG
+NVCC Flags:  -std c++17 -Xcompiler -std=c++17;--compiler-options;-fPIC;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_60,code=compute_60;--compiler-options;-fPIC;--compiler-options;-Wall;-lineinfo
+
+==== Chrono Vehicle module ====
+
+Enable Irrlicht support
+Enable OpenGL support
+Add ChronoEngine_vehicle library
+Add ChronoEngine_vehicle_cosim library
+
+==== Chrono models ====
+
+Robot models...
+Vehicle models...
+
+==== Chrono Sensor module ====
+
+OpenGL found: TRUE
+GLEW found:   TRUE
+GLFW3 found:  1
+GL libraries found.
+OptiX include directory: /home/chrono/Documents/chrono/libraries/NVIDIA-OptiX-SDK-7.7.0-linux64-x86_64/include
+CMAKE_CXX_STANDARD: 17
+CMAKE_CXX_FLAGS_DEBUG: -g   -fopenmp -march=native -D_DEBUG -DDEBUG
+
+==== SynChrono module ====
+
+
+==== Chrono Python module ====
+
+CMake Deprecation Warning at src/chrono_swig/chrono_python/CMakeLists.txt:51 (cmake_policy):
+  The OLD behavior for policy CMP0078 will be removed from a future version
+  of CMake.
+
+  The cmake-policies(7) manual explains that the OLD behaviors of all
+  policies are deprecated and that a policy should be set to OLD only under
+  specific short-term circumstances.  Projects should be ported to the NEW
+  behavior and not rely on setting a policy to OLD.
+
+
+CMake Deprecation Warning at src/chrono_swig/chrono_python/CMakeLists.txt:56 (cmake_policy):
+  The OLD behavior for policy CMP0086 will be removed from a future version
+  of CMake.
+
+  The cmake-policies(7) manual explains that the OLD behaviors of all
+  policies are deprecated and that a policy should be set to OLD only under
+  specific short-term circumstances.  Projects should be ported to the NEW
+  behavior and not rely on setting a policy to OLD.
+
+
+...find Python
+CMake Warning (dev) at src/chrono_swig/chrono_python/CMakeLists.txt:72 (find_package):
+  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+  the cmake_policy command to set the policy and suppress this warning.
+
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at src/chrono_swig/chrono_python/CMakeLists.txt:73 (find_package):
+  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+  the cmake_policy command to set the policy and suppress this warning.
+
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+...find SWIG
+...add python CORE module
+...add python FEA module
+...add python IRRLICHT module
+...add python vehicle module:  pychrono.vehicle
+...add python SENSOR module
+   Numpy include directory: /home/chrono/miniconda3/envs/chrono9/lib/python3.9/site-packages/numpy/core/include
+...add python robot module:  pychrono.robot
+...add python parsers module:  pychrono.parsers
+
+To have access to the Chrono::Python wrapper modules, after building and (optionally) installing,
+append one of the following to the PYTHONPATH environment variable:
+  For the modules in the BUILD tree:    $<TARGET_FILE_DIR:_core>
+  For the modules in the INSTALL tree:  /usr/local/share/chrono/python
+```
+
+</details>
 
 7. Linux/make:
 
