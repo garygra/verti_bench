@@ -575,7 +575,7 @@ This is the visualization of HMMWV car on deformable snow terrain with obstacles
 - evaluate: evaluate a trained model 
 
 # License
-This project is released under the MIT license. Parts of this project contains code and models from other sources, which are subject to their respective licenses.
+This project is released under the [MIT license](./LICENSE). Parts of this project contains code and models from other sources, which are subject to their respective licenses.
 
 # Citation
 If you find our work useful, please consider citing us!
