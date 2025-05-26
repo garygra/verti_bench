@@ -516,7 +516,7 @@ make -j 10
 ```
 to build with Make using 10 parallel build threads.
 
-8. Update .bashrc
+8. Update `.bashrc`
 ```
 echo 'export LD_LIBRARY_PATH=$HOME/Documents/chrono/libraries/urdf/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
 echo 'export CHRONO_DATA_DIR=$HOME/Documents/verti_bench/envs/data/' >> ~/.bashrc
