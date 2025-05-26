@@ -359,6 +359,9 @@ This is the visualization of HMMWV car on deformable snow terrain with obstacles
 # Citation
 If you find our work useful, please consider citing us! 
 
+# License
+This project is released under the MIT license. Parts of this project contains code and models from other sources, which are subject to their respective licenses.
+
 ```bibtex
 @article{xu2025verti,
   title={Verti-Bench: A General and Scalable Off-Road Mobility Benchmark for Vertically Challenging Terrain},
