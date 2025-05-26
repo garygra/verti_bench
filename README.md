@@ -354,14 +354,13 @@ This is the visualization of HMMWV car on deformable snow terrain with obstacles
 - `off_road_VertiBench.py`: gymnasium environment wrapper to enable RL training
 - train: train the models for each example env with stable-baselines3
 - test: test scripts to visualize the training environment and debug it
-- evaluate: evaluate a trained model
-
-# Citation
-If you find our work useful, please consider citing us! 
+- evaluate: evaluate a trained model 
 
 # License
 This project is released under the MIT license. Parts of this project contains code and models from other sources, which are subject to their respective licenses.
 
+# Citation
+If you find our work useful, please consider citing us!
 ```bibtex
 @article{xu2025verti,
   title={Verti-Bench: A General and Scalable Off-Road Mobility Benchmark for Vertically Challenging Terrain},
