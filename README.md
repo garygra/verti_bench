@@ -114,7 +114,7 @@ conda install -c conda-forge glfw
 conda install pychrono-9.0.1-py39_1.tar.bz2
 ```
 
-5. After clone this codebase (assuming you cloned this repo to `<YOUR_HOME_DIR>/Documents/verti_bench/`; adjust the path below if you cloned it elsewhere), add Verti-Bench data directory to `.bashrc`:
+5. After clone this codebase (assuming you cloned this repo to `~/Documents/verti_bench/`; adjust the path below if you cloned it elsewhere), add Verti-Bench data directory to `.bashrc`:
 ```
 echo 'export CHRONO_DATA_DIR=$HOME/Documents/verti_bench/envs/data/' >> ~/.bashrc
 echo 'export PYTHONPATH=$PYTHONPATH:$HOME/Documents/' >> ~/.bashrc
@@ -206,7 +206,7 @@ chmod +x buildEigen.sh buildGL.sh buildURDF.sh
 ./buildURDF.sh
 ```
 6. Install chrono modules from C++ source code:
-- `Chrono::core` module: Get into your home code directory again to create build folder 
+- `Chrono::core` module: Get into your home code directory again to create `chrono_build` folder `<YOUR_HOME_DIR>/Documents/chrono_build`
 ```
 mkdir chrono_build
 cd chrono_build
