@@ -320,7 +320,7 @@ In the Verti-Bench, all task configurations have been documented in YAML files, 
 All prebuilt envs params and obstacle maps are stored in the folder `envs/data/BenchMaps/sampled_maps/Configs/Final`. For geometry, we use real-world off-road terrain composed of boulders and rocks to create 100 elevation maps under `envs/data/BenchMaps/sampled_maps/Worlds`.
 
 ### Customize envs
-In the folder `envs/utils`, we have provided SWAE model called **BenchGen.pth** to learn the distribution of real-world vertically challenging terrain to maintain realism. Below are code pipelines to customize Verti-Bench envs.
+In the folder `envs/utils`, we have provided SWAE model called **BenchGen.pth** to learn the distribution of real-world vertically challenging terrain to maintain realism. Below are code pipelines to customize Verti-Bench envs and please follow the orders!
 
 - `SWAE_gen.ipynb`: Researchers can utilize this model to generate millions of different terrain geometry as they wanted.
 - `preHeight-VertiBench.py`: Utilize single terrain patch to query mesh height and save as .npy following BMP coordinate before generating customed env's params.  
