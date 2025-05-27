@@ -307,7 +307,7 @@ After choosing all above modules, click **configure** and **generate** buttons. 
 <summary>CMake Logs:</summary>
 This is cmake-gui concise output as a reference:
 
-```bash
+```
 We are on a Linux system
 The host processor is x86_64
 Building for a Linux system
