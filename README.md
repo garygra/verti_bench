@@ -549,9 +549,7 @@ Run our provided ten mobility systems (no task has been used for training) in th
 
 Full Version:
 ```
-python setup.py vehicle=hmmwv system=pid speed=4.0 \ 
-world_id=1 scale_factor=1.0 max_time=60 num_experiments=1 \ 
-render=true use_gui=false
+python setup.py vehicle=hmmwv system=pid speed=4.0 world_id=1 scale_factor=1.0 max_time=60 num_experiments=1 render=true use_gui=false
 ```
 - system: pid (default), eh, mppi, rl, mcl, acl, wmvct, mppi6, tal, tnt
 - world_id: from 1 (default) to 100; each world has 10 start and goal pairs
