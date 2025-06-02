@@ -34,7 +34,7 @@ Verti-Bench, a general and scalable off-road mobility benchmark that focuses on 
 dynamics simulator, [Chrono](https://projectchrono.org/), Verti-Bench encapsulates variations in four orthogonal dimensions: elevation, semantics, vehicle scalability and obstacles.
 
 # Installation
-There are two options for installing PyChrono on your computer. The first one uses a prebuilt conda packages and is the recommended way. The second one is for users who need to build the full library from the C++ source.
+There are two options for installing PyChrono on your computer. The first one uses a prebuilt conda packages and is the recommended way (which is adapted from [official PyChrono installation](https://api.projectchrono.org/pychrono_installation.html) and [gym-chrono](https://github.com/projectchrono/gym-chrono)). The second one is for users who need to build the full library from the C++ source.
 
 ### Dependencies:
 > Ubuntu 22.04 or above.
