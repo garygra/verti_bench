@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4aced756830a7da964a15013f8bdc2f6cb0fda0ae93d22b90c57f61db38934c6
-size 232
+# Blender MTL File: 'None'
+# Material Count: 1
+
+newmtl Material.001
+Ns 35.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.017388 0.017388 0.017388
+Ks 0.100000 0.100000 0.100000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2

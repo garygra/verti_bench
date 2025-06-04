@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6a2136f109c976b82ac0a1f12dc8c3c0bc6e872638790e89aea3f18ad4fd21b4
-size 344
+# Blender MTL File: 'None'
+# Material Count: 1
+
+newmtl polySurface53SG
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.040000 0.040000 0.040000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Bump Textures/Wheel_F_Gator_Wheels_Normal.jpg
+map_Kd Textures/Wheel_F_Gator_Wheels_AlbedoTransparency.jpg
