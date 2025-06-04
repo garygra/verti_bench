@@ -125,14 +125,14 @@ echo 'export PYTHONPATH=$PYTHONPATH:$HOME/Documents/' >> ~/.bashrc
 sudo apt install ros-humble-grid-map-msgs ros-humble-geometry-msgs
 ```
 
-7. Download large files from Git Large File Storage
+7. After cloning this repository, download the large files managed by Git Large File Storage (Git LFS)
 ```
 sudo apt update
 sudo apt install git-lfs
-git lfs install
 ```
 Then from folder `~/Documents/verti_bench/`:
 ```
+git lfs install
 git lfs pull
 ```
 
@@ -540,14 +540,14 @@ echo 'export PYTHONPATH=$PYTHONPATH:$HOME/Documents/' >> ~/.bashrc
 sudo apt install ros-humble-grid-map-msgs ros-humble-geometry-msgs
 ```
 
-10. Download large files from Git Large File Storage
+10. After cloning this repository, download the large files managed by Git Large File Storage (Git LFS)
 ```
 sudo apt update
 sudo apt install git-lfs
-git lfs install
 ```
 Then from folder `~/Documents/verti_bench/`:
 ```
+git lfs install
 git lfs pull
 ```
 
