@@ -1,13 +1,3 @@
-# Blender MTL File: 'None'
-# Material Count: 1
-
-newmtl Wheels_Tires
-Ns 94.117647
-Ka 0.000000 0.000000 0.000000
-Kd 0.398431 0.398431 0.398431
-Ks 0.449020 0.449020 0.449020
-Ke 0.000000 0.000000 0.000000
-Ni 1.000000
-d 1.000000
-illum 2
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:6ac2579477147cb29adec1e7a3724f45dba11c9ac5e3ce6153b5892c0ae67ab7
+size 233

@@ -1,6 +1,3 @@
-newmtl wheelSurface
-Ka 0.2490 0.1102 0.0000
-Kd 0.4776 0.1959 0.0000
-Ks 0.5796 0.5796 0.5796
-illum 2
-Ns 134.8800
+version https://git-lfs.github.com/spec/v1
+oid sha256:23fb6561e7fc2378e2045d0c1731478ac7878a3cf761206bf6098187b2dba971
+size 112

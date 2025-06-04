@@ -1,26 +1,3 @@
-# Blender MTL File: 'Tree.blend'
-# Material Count: 2
-
-newmtl TreeTexture
-Ns 250.000000
-Ka 1.000000 1.000000 1.000000
-Kd 0.800000 0.800000 0.800000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.450000
-d 1.000000
-illum 2
-map_Kd textures/mapletree.png
-map_d textures/mapletreeA.png
-
-newmtl TreeTexture90
-Ns 250.000000
-Ka 1.000000 1.000000 1.000000
-Kd 0.800000 0.800000 0.800000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.450000
-d 1.000000
-illum 2
-map_Kd textures/mapletree90.png
-map_d textures/mapletree90A.png
+version https://git-lfs.github.com/spec/v1
+oid sha256:b0b87a33c712c5fc7c72cd0f9c2f17d4023ffdd7ed8025acf94ec931b9464665
+size 549

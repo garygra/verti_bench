@@ -1,12 +1,3 @@
-# Blender MTL File: 'None'
-# Material Count: 1
-
-newmtl Frame_Suspension
-Ns 0.000000
-Ka 1.000000 1.000000 1.000000
-Kd 0.500000 0.500000 0.500000
-Ks 0.000000 0.000000 0.000000
-Ke 0.000000 0.000000 0.000000
-Ni 1.000000
-d 1.000000
-illum 1
+version https://git-lfs.github.com/spec/v1
+oid sha256:32c1e17cbf13ae669e2c563bce75e2acb970fd77e377e5c93bd1c83ff0acb1bc
+size 235
