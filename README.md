@@ -125,6 +125,17 @@ echo 'export PYTHONPATH=$PYTHONPATH:$HOME/Documents/' >> ~/.bashrc
 sudo apt install ros-humble-grid-map-msgs ros-humble-geometry-msgs
 ```
 
+7. Download large files from Git Large File Storage
+```
+sudo apt update
+sudo apt install git-lfs
+git lfs install
+```
+Then from folder `~/Documents/verti_bench/`:
+```
+git lfs pull
+```
+
 ### B) Pychrono 9.0.1 from Source
 1. Clone the 901 branch from [here](https://github.com/madhan001/chrono/tree/901) (assuming you cloned `chrono` repo to `<YOUR_HOME_DIR>/Documents/chrono`) and update the submodule:
 ```
@@ -523,11 +534,24 @@ echo 'export CHRONO_DATA_DIR=$HOME/Documents/verti_bench/envs/data/' >> ~/.bashr
 echo 'export PYTHONPATH=$HOME/Documents/chrono_build/bin/' >> ~/.bashrc
 echo 'export PYTHONPATH=$PYTHONPATH:$HOME/Documents/' >> ~/.bashrc
 ```
+
 9. Install ros2 humble related pkgs for systems:
 ```
 sudo apt install ros-humble-grid-map-msgs ros-humble-geometry-msgs
 ```
-10. Test Chrono Build:
+
+10. Download large files from Git Large File Storage
+```
+sudo apt update
+sudo apt install git-lfs
+git lfs install
+```
+Then from folder `~/Documents/verti_bench/`:
+```
+git lfs pull
+```
+
+11. Test Chrono Build:
 
 Get into the demos folder `<YOUR_HOME_DIR>/Documents/chrono/src/demos/python/` and **activate conda virtual env**, if you have no problems for `core`, `irrlicht`, `robot`, `sensor` and `vehicle` modules, you have successfully built chrono!
 
