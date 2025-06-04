@@ -114,7 +114,7 @@ conda install -c conda-forge glfw
 conda install pychrono-9.0.1-py39_1.tar.bz2
 ```
 
-5. After clone this codebase (assuming you cloned this repo to `~/Documents/verti_bench/`; adjust the path below if you cloned it elsewhere), add Verti-Bench data directory to `.bashrc`:
+5. After cloning this codebase (assuming you cloned this repo to `~/Documents/verti_bench/`; adjust the path below if you cloned it elsewhere), add Verti-Bench data directory to `.bashrc`:
 ```
 echo 'export CHRONO_DATA_DIR=$HOME/Documents/verti_bench/envs/data/' >> ~/.bashrc
 echo 'export PYTHONPATH=$PYTHONPATH:$HOME/Documents/' >> ~/.bashrc
@@ -125,7 +125,7 @@ echo 'export PYTHONPATH=$PYTHONPATH:$HOME/Documents/' >> ~/.bashrc
 sudo apt install ros-humble-grid-map-msgs ros-humble-geometry-msgs
 ```
 
-7. After cloning this repository, download the large files managed by Git Large File Storage (Git LFS)
+7. Download the large files managed by Git Large File Storage (Git LFS)
 ```
 sudo apt update
 sudo apt install git-lfs
@@ -527,7 +527,7 @@ make -j 10
 ```
 to build with Make using 10 parallel build threads.
 
-8. Update `.bashrc`
+8. After cloning this codebase (assuming you cloned this repo to `~/Documents/verti_bench/`; adjust the path below if you cloned it elsewhere), update `.bashrc`:
 ```
 echo 'export LD_LIBRARY_PATH=$HOME/Documents/chrono/libraries/urdf/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
 echo 'export CHRONO_DATA_DIR=$HOME/Documents/verti_bench/envs/data/' >> ~/.bashrc
@@ -540,7 +540,7 @@ echo 'export PYTHONPATH=$PYTHONPATH:$HOME/Documents/' >> ~/.bashrc
 sudo apt install ros-humble-grid-map-msgs ros-humble-geometry-msgs
 ```
 
-10. After cloning this repository, download the large files managed by Git Large File Storage (Git LFS)
+10. Download the large files managed by Git Large File Storage (Git LFS)
 ```
 sudo apt update
 sudo apt install git-lfs
