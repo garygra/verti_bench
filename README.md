@@ -10,9 +10,10 @@ Robotics: Science and Systems (RSS) 2025
 [[Arxiv]](https://arxiv.org/pdf/2502.11426)
 [[Video]](https://www.youtube.com/watch?v=O9VlMg3tnvo)
 
-<p align="center">
-    <img src="assets/gmu.png" height="35"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="assets/RobotiXX_gmu.gif" height="35">
-</p>
+<div align="center">
+  <img src="assets/gmu.png" height="40" style="margin-right: 30px; margin-bottom: 15px;">
+  <img src="assets/RobotiXX_gmu.gif" height="40" style="margin-bottom: 15px;">
+</div>
 
 
 [![Chrono](https://img.shields.io/badge/Chrono-9.0.1-brightgreen.svg)](https://projectchrono.org/) [![Linux platform](https://img.shields.io/badge/Platform-linux--64-orange.svg)](https://ubuntu.com/blog/tag/22-04-lts) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]()
