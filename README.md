@@ -11,7 +11,9 @@ Robotics: Science and Systems (RSS) 2025
 [[Video]](https://www.youtube.com/watch?v=O9VlMg3tnvo)
 
 <p align="center">
-    <img src="assets/gmu.png" height=50"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="assets/RobotiXX_gmu.gif" height=50">
+    <img src="assets/gmu.png" style="height: clamp(40px, 4vw, 70px);"> 
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+    <img src="assets/RobotiXX_gmu.gif" style="height: clamp(40px, 4vw, 70px);">
 </p>
 
 
@@ -26,7 +28,7 @@ Robotics: Science and Systems (RSS) 2025
 ### TODO
 - [x] Release code pipeline
 - [x] Release ten off-road mobility systems
-- [ ] Release different scale vehicles
+- [x] Release different scale vehicles
 - [ ] Release datasets from expert demonstration, random exploration, failure cases
 
 # Introduction
@@ -577,7 +579,7 @@ python setup.py vehicle=hmmwv system=pid speed=4.0 world_id=1 scale_factor=1.0 m
 ```
 - system: pid (default), eh, mppi, rl, mcl, acl, wmvct, mppi6, tal, tnt
 - world_id: from 1 (default) to 100; each world has 10 start and goal pairs
-- vehicle: hmmwv (default)
+- vehicle: hmmwv (default), gator, feda, man5t, man7t, man10t, m113, art, vw
 - scale_factor: 1.0 (default), 1/6, 1/10
 
 Simplified Version:

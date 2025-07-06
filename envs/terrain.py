@@ -93,7 +93,7 @@ class TerrainManager:
         self.obstacle_flag = self.config['obstacles_flag']
         self.obstacle_density = self.config['obstacle_density']
         self.textures = self.config['textures']
-        self.terrain_delta = 0.1 # mesh resolution for SCM terrain
+        self.terrain_delta = 0.1 * scale_factor # mesh resolution for SCM terrain
         self.patch_size = 9
         
         # Load terrain data
@@ -621,7 +621,8 @@ class TerrainManager:
             terrain_type = terrain_types[0]
             center_x, center_y = bmp_width // 2, bmp_height // 2
             chrono_center_x, chrono_center_y = self.transform_to_chrono([(center_x, center_y)])[0]
-            section_pos = chrono.ChVector3d(chrono_center_x + 0.5, chrono_center_y - 0.5, 0)
+            section_pos = chrono.ChVector3d(chrono_center_x + 0.5 * self.scale_factor, 
+                                            chrono_center_y - 0.5 * self.scale_factor, 0)
                 
             # Create terrain section
             deform_terrain = veh.SCMTerrain(system)
@@ -644,8 +645,8 @@ class TerrainManager:
             deform_terrain.SetMeshWireframe(False)
             
             # Define size for deformable terrain
-            width = 2 * self.terrain_length - 1
-            height = 2 * self.terrain_width - 1
+            width = 2 * self.terrain_length - 1 * self.scale_factor
+            height = 2 * self.terrain_width - 1 * self.scale_factor
             
             # Create and set boundary
             aabb = chrono.ChAABB(chrono.ChVector3d(-width/2, -height/2, 0), chrono.ChVector3d(width/2, height/2, 0))
@@ -683,7 +684,8 @@ class TerrainManager:
                 section_height = end_y - start_y
                 center_x, center_y = bmp_width // 2, start_y + (section_height - 1) // 2    
                 chrono_center_x, chrono_center_y = self.transform_to_chrono([(center_x, center_y)])[0]
-                section_pos = chrono.ChVector3d(chrono_center_x + 0.5, chrono_center_y - 0.5, 0)
+                section_pos = chrono.ChVector3d(chrono_center_x + 0.5 * self.scale_factor, 
+                                                chrono_center_y - 0.5 * self.scale_factor, 0)
                 
                 # Create terrain section
                 deform_terrain = veh.SCMTerrain(system)
@@ -706,7 +708,7 @@ class TerrainManager:
                 deform_terrain.SetMeshWireframe(False)
                 
                 # Define size for deformable terrain
-                width = 2 * self.terrain_length - 1
+                width = 2 * self.terrain_length - 1 * self.scale_factor
                 height = (section_height - 1) * (2 * self.terrain_width / bmp_height)
                 
                 # Create and set boundary
@@ -758,7 +760,8 @@ class TerrainManager:
                     center_x, center_y = bmp_width // 2, start_y + (section_height - 1) // 2 - 0.5
                     
                 chrono_center_x, chrono_center_y = self.transform_to_chrono([(center_x, center_y)])[0]
-                section_pos = chrono.ChVector3d(chrono_center_x + 0.5, chrono_center_y - 1, 0)
+                section_pos = chrono.ChVector3d(chrono_center_x + 0.5 * self.scale_factor, 
+                                                chrono_center_y - 1 * self.scale_factor, 0)
                 
                 # Create terrain section
                 deform_terrain = veh.SCMTerrain(system)
@@ -780,7 +783,7 @@ class TerrainManager:
                 deform_terrain.SetPlane(chrono.ChCoordsysd(section_pos, chrono.CSYSNORM.rot))
                 deform_terrain.SetMeshWireframe(False)
                 
-                width = 2 * self.terrain_length - 1
+                width = 2 * self.terrain_length - 1 * self.scale_factor
                 height = (section_height - 1) * (2 * self.terrain_width / bmp_height)
 
                 # Create and set boundary
@@ -1153,7 +1156,7 @@ class TerrainManager:
             
             rock = Asset(visual_shape_path="sensor/offroad/rock.obj",
                         scale=rock_scale,
-                        bounding_box=chrono.ChVector3d(4.4 * self.scale_factor, 4.4 * self.scale_factor, 3.8 * self.scale_factor))
+                        bounding_box=chrono.ChVector3d(4.4, 4.4, 3.8))
             
             asset_body = rock.Copy()
             asset_body.UpdateAssetPosition(rock_pos, chrono.ChQuaterniond(1, 0, 0, 0))
@@ -1167,7 +1170,7 @@ class TerrainManager:
             
             tree = Asset(visual_shape_path="sensor/offroad/tree.obj",
                         scale=1.0 * self.scale_factor,
-                        bounding_box=chrono.ChVector3d(1.0 * self.scale_factor, 1.0 * self.scale_factor, 5.0 * self.scale_factor))
+                        bounding_box=chrono.ChVector3d(1.0, 1.0, 5.0))
             
             asset_body = tree.Copy()
             asset_body.UpdateAssetPosition(tree_pos, chrono.ChQuaterniond(1, 0, 0, 0))
@@ -1199,7 +1202,7 @@ class TerrainManager:
                 
             # Create a mask for the obstacle
             width_pixels = int(box_width * self.bmp_dim_x / (2 * self.terrain_length))
-            length_pixels = int(box_length * self.bmp_dim_x / (2 * self.terrain_width))
+            length_pixels = int(box_length * self.bmp_dim_y / (2 * self.terrain_width))
             
             # Calculate bounds for the obstacle footprint
             x_min = max(0, obs_x - width_pixels // 2)
@@ -1227,7 +1230,7 @@ class TerrainManager:
                 
             # Create a mask for the obstacle
             width_pixels = int(box_width * self.bmp_dim_x / (2 * self.terrain_length))
-            length_pixels = int(box_length * self.bmp_dim_x / (2 * self.terrain_width))
+            length_pixels = int(box_length * self.bmp_dim_y / (2 * self.terrain_width))
             
             # Calculate bounds for the obstacle footprint
             x_min = max(0, obs_x - width_pixels // 2)
@@ -1237,12 +1240,12 @@ class TerrainManager:
             
             obs_terrain[y_min:y_max, x_min:x_max] = 255
             
-            # Save obstacle map
-            obs_terrain_image = Image.fromarray(obs_terrain.astype(np.uint8), mode='L')
-            obs_path = os.path.join(os.path.dirname(os.path.realpath(__file__)),
-                            "./data/BenchMaps/sampled_maps/Configs/Custom", f"obs{self.world_id}_{self.difficulty}.bmp")
-            os.makedirs(os.path.dirname(obs_path), exist_ok=True)
-            obs_terrain_image.save(obs_path)
+        # Save obstacle map
+        obs_terrain_image = Image.fromarray(obs_terrain.astype(np.uint8), mode='L')
+        obs_path = os.path.join(os.path.dirname(os.path.realpath(__file__)),
+                        "./data/BenchMaps/sampled_maps/Configs/Custom", f"obs{self.world_id}_{self.difficulty}.bmp")
+        os.makedirs(os.path.dirname(obs_path), exist_ok=True)
+        obs_terrain_image.save(obs_path)
         
         return obs_path
         

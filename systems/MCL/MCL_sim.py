@@ -36,6 +36,11 @@ class MCLSim:
         self.system_type = config['system']
         self.max_time = config['max_time']
         self.speed = config['speed']
+        
+        supported_vehicles = ['hmmwv']
+        if self.vehicle_type.lower() not in supported_vehicles:
+            raise ValueError(f"Unsupported vehicle type: {self.vehicle_type}, "
+                             f"only support {supported_vehicles[0]} for RL-based systems!")
 
         # RL specific attributes
         self.env = None

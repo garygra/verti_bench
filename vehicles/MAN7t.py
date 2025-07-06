@@ -2,7 +2,7 @@ import pychrono as chrono
 import pychrono.vehicle as veh
 import numpy as np
 
-class HMMWVManager:
+class MAN7tManager:
     def __init__(self, system, step_size=5e-3):
         self.system = system
         self.step_size = step_size
@@ -12,7 +12,7 @@ class HMMWVManager:
     
     def initialize_vehicle(self, start_pos, goal_pos, terrain_manager):
         """Initialize the HMMWV vehicle with specified parameters"""
-        self.vehicle = veh.HMMWV_Reduced(self.system)
+        self.vehicle = veh.MAN_7t(self.system)
         
         # Set vehicle parameters
         self.scale_factor = terrain_manager.scale_factor
@@ -21,9 +21,9 @@ class HMMWVManager:
         self.vehicle.SetChassisFixed(False)
         self.vehicle.SetEngineType(veh.EngineModelType_SIMPLE_MAP)  # Higher max torques
         self.vehicle.SetTransmissionType(veh.TransmissionModelType_AUTOMATIC_SIMPLE_MAP)
-        self.vehicle.SetDriveType(veh.DrivelineTypeWV_AWD)
         self.vehicle.SetTireType(veh.TireModelType_RIGID)
         self.vehicle.SetTireStepSize(self.step_size)
+        self.vehicle.SetDriveline6WD(True)
         self.vehicle.SetInitFwdVel(0.0)
         
         # Initialize position and orientation
@@ -38,9 +38,6 @@ class HMMWVManager:
         self.vehicle.Initialize()
         
         # Configure differentials
-        self.vehicle.LockAxleDifferential(0, True)    
-        self.vehicle.LockAxleDifferential(1, True)
-        self.vehicle.LockCentralDifferential(0, True)
         self.vehicle.GetVehicle().EnableRealtime(False)
         
         # Set visualization types
@@ -69,7 +66,7 @@ class HMMWVManager:
             start_height = terrain_manager.high_res_data[pos_bmp_y, pos_bmp_x]
 
         # Set position with correct height
-        start_pos = (start_pos[0], start_pos[1], start_height * self.scale_factor + start_pos[2])
+        start_pos = (start_pos[0], start_pos[1], start_height * self.scale_factor + start_pos[2] - 0.4)
         
         # Calculate orientation based on direction to goal
         dx = goal_pos[0] - start_pos[0]

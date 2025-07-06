@@ -16,6 +16,14 @@ from PIL import Image
 from verti_bench.envs.terrain import TerrainManager
 from verti_bench.systems.PID.PID import PIDPlanner
 from verti_bench.vehicles.HMMWV import HMMWVManager
+from verti_bench.vehicles.FEDA import FEDAManager
+from verti_bench.vehicles.Gator import GatorManager
+from verti_bench.vehicles.MAN5t import MAN5tManager
+from verti_bench.vehicles.MAN7t import MAN7tManager
+from verti_bench.vehicles.MAN10t import MAN10tManager
+from verti_bench.vehicles.M113 import M113Manager
+from verti_bench.vehicles.ART import ARTManager
+from verti_bench.vehicles.VW import VWManager
 
 class PIDSim:
     def __init__(self, config):
@@ -34,6 +42,7 @@ class PIDSim:
         self.system_type = config['system']
         self.max_time = config['max_time']
         self.speed = config['speed']
+        self.vehicle_type_lower = self.vehicle_type.lower()
         
         # Initialize system
         self.system = chrono.ChSystemNSC()
@@ -48,7 +57,7 @@ class PIDSim:
         self.system.SetNumThreads(num_threads_chrono, num_threads_collision, num_threads_eigen)
         
         # Simulation parameters
-        self.step_size = 5e-3
+        self.step_size = self._step_size()
         self.vis_freq = 100.0
         self.vis_dur = 1.0 / self.vis_freq
         self.last_vis_time = 0.0
@@ -60,7 +69,7 @@ class PIDSim:
         # Stuck tracking
         self.stuck_counter = 0
         self.stuck_distance = 0.01
-        self.stuck_time = 10.0
+        self.stuck_time = self._stuck_time()
         self.last_position = None
         
         # Load terrain configs
@@ -71,7 +80,43 @@ class PIDSim:
         
         # Create vehicle manager
         self._initialize_vehicle()
+    
+    def _step_size(self):
+        """Get vehicle-specific step size based on vehicle type"""
+        step_sizes = {
+            'hmmwv': 5e-3,
+            'gator': 2e-3,
+            'feda': 1e-3,
+            'man5t': 1e-3,
+            'man7t': 1e-3,
+            'man10t': 1e-3,
+            'm113': 8e-4,
+            'art': 1e-3,
+            'vw': 3e-4,
+            'default': 1e-3       
+        }
         
+        return step_sizes[self.vehicle_type_lower]
+    
+    def _stuck_time(self):
+        """
+        Get stuck time
+        """
+        stuck_time = {
+            'hmmwv': 10,
+            'gator': 40,
+            'feda': 40,
+            'man5t': 50,
+            'man7t': 50,
+            'man10t': 60,
+            'm113': 60,
+            'art': 60,
+            'vw': 60,
+            'default': 10       
+        }
+        
+        return stuck_time[self.vehicle_type_lower]
+    
     def _initialize_system(self):
         """Initialize the control system based on system_type"""
         if self.system_type.lower() == 'pid':
@@ -79,24 +124,43 @@ class PIDSim:
         else:
             raise ValueError(f"Unsupported system type: {self.system_type}.")
     
-    #TODO: Add other vehicle types
     def _initialize_vehicle(self):
         """Initialize the vehicle manager based on vehicle_type"""
         if self.vehicle_type.lower() == 'hmmwv':
             self.vehicle_manager = HMMWVManager(self.system, self.step_size)
-        # elif self.vehicle_type.lower() == 'sedan':
-        #     self.vehicle_manager = SedanManager(self.system, self.step_size)
-        # elif self.vehicle_type.lower() == 'truck':
-        #     self.vehicle_manager = TruckManager(self.system, self.step_size)
+        elif self.vehicle_type.lower() == 'gator':
+            self.vehicle_manager = GatorManager(self.system, self.step_size)
+        elif self.vehicle_type.lower() == 'feda':
+            self.vehicle_manager = FEDAManager(self.system, self.step_size)
+        elif self.vehicle_type.lower() == 'man5t':
+            self.vehicle_manager = MAN5tManager(self.system, self.step_size)    
+        elif self.vehicle_type.lower() == 'man7t':
+            self.vehicle_manager = MAN7tManager(self.system, self.step_size)    
+        elif self.vehicle_type.lower() == 'man10t':
+            self.vehicle_manager = MAN10tManager(self.system, self.step_size)  
+        elif self.vehicle_type.lower() == 'm113':
+            self.vehicle_manager = M113Manager(self.system, self.step_size)  
+        elif self.vehicle_type.lower() == 'art':
+            self.vehicle_manager = ARTManager(self.system, self.step_size)  
+        elif self.vehicle_type.lower() == 'vw':
+            self.vehicle_manager = VWManager(self.system, self.step_size)
         else:
             raise ValueError(f"Unsupported vehicle type: {self.vehicle_type}. ")
         
     def _setup_visualization(self):
         """Set up visualization system"""
         self.vis = veh.ChWheeledVehicleVisualSystemIrrlicht()
+        if self.vehicle_type_lower in ['m113']:
+            self.vis =veh.ChTrackedVehicleVisualSystemIrrlicht()
         self.vis.SetWindowTitle('vws in the wild')
-        self.vis.SetWindowSize(2560, 1440)
-        trackPoint = chrono.ChVector3d(0.0, 0.0, 1.75)
+        self.vis.SetWindowSize(3840, 2160)
+        
+        if self.vehicle_type_lower in ['man5t', 'man7t', 'man10t']:
+            trackPoint = chrono.ChVector3d(-5.5, 0.0, 2.6)
+        elif self.vehicle_type_lower in ['hmmwv', 'gator', 'feda', 'm113']:
+            trackPoint = chrono.ChVector3d(-1.0, 0.0, 1.75)
+        else:
+            trackPoint = chrono.ChVector3d(2.0, 0.0, 0.0)
         self.vis.SetChaseCamera(trackPoint, 6.0, 0.5)
         self.vis.Initialize()
         self.vis.AddLightDirectional()
@@ -135,8 +199,12 @@ class PIDSim:
         
         # Set up moving patches if needed
         if self.terrain_manager.terrain_type == 'deformable' or self.terrain_manager.terrain_type == 'mixed':
-            deform_terrains = [t for t in self.terrains if isinstance(t, veh.SCMTerrain)]
-            self.vehicle_manager.setup_moving_patches(deform_terrains)
+            if self.vehicle_type.lower() in ['m113']:
+                deform_terrains = [t for t in self.terrains if isinstance(t, veh.SCMTerrain)]
+                self.vehicle_manager.setup_moving_patches(deform_terrains, True)
+            else:
+                deform_terrains = [t for t in self.terrains if isinstance(t, veh.SCMTerrain)]
+                self.vehicle_manager.setup_moving_patches(deform_terrains, False)
         
         # Create obstacle map and plan path
         obs_path = self.terrain_manager.obs_path
@@ -239,7 +307,7 @@ class PIDSim:
                     self.speed, 
                     time, 
                     self.step_size,
-                    self.vehicle_manager.vehicle.GetRefFrame()
+                    self.vehicle_manager.vehicle.GetVehicle().GetRefFrame()
                 )
                 
                 self.driver_inputs.m_throttle = throttle
@@ -281,7 +349,7 @@ class PIDSim:
             self.last_position = current_position
             
             # Check if goal reached
-            if vector_to_goal.Length() < 8:
+            if vector_to_goal.Length() < 8 * self.scale_factor:
                 print('--------------------------------------------------------------')
                 print('Goal Reached')
                 print(f'Initial position: {self.vehicle_manager.init_loc}')
@@ -316,7 +384,12 @@ class PIDSim:
             # Synchronize terrains and vehicle
             for terrain in self.terrains:
                 terrain.Synchronize(time)
-                self.vehicle_manager.synchronize(time, self.driver_inputs, terrain)
+
+                if self.vehicle_type_lower in ['m113']:
+                    self.vehicle_manager.synchronize(time, self.driver_inputs)
+                else:
+                    self.vehicle_manager.synchronize(time, self.driver_inputs, terrain)
+                
                 terrain.Advance(self.step_size)
             
             # Advance simulation components

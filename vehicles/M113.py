@@ -2,7 +2,7 @@ import pychrono as chrono
 import pychrono.vehicle as veh
 import numpy as np
 
-class HMMWVManager:
+class M113Manager:
     def __init__(self, system, step_size=5e-3):
         self.system = system
         self.step_size = step_size
@@ -12,19 +12,18 @@ class HMMWVManager:
     
     def initialize_vehicle(self, start_pos, goal_pos, terrain_manager):
         """Initialize the HMMWV vehicle with specified parameters"""
-        self.vehicle = veh.HMMWV_Reduced(self.system)
+        self.vehicle = veh.M113(self.system)
         
         # Set vehicle parameters
         self.scale_factor = terrain_manager.scale_factor
-        self.vehicle.SetContactMethod(chrono.ChContactMethod_NSC)
+        self.vehicle.SetContactMethod(chrono.ChContactMethod_SMC)
         self.vehicle.SetChassisCollisionType(veh.CollisionType_PRIMITIVES)
         self.vehicle.SetChassisFixed(False)
-        self.vehicle.SetEngineType(veh.EngineModelType_SIMPLE_MAP)  # Higher max torques
+        self.vehicle.SetTrackShoeType(veh.TrackShoeType_SINGLE_PIN)
+        self.vehicle.SetDrivelineType(veh.DrivelineTypeTV_BDS)
+        self.vehicle.SetEngineType(veh.EngineModelType_SIMPLE_MAP)
         self.vehicle.SetTransmissionType(veh.TransmissionModelType_AUTOMATIC_SIMPLE_MAP)
-        self.vehicle.SetDriveType(veh.DrivelineTypeWV_AWD)
-        self.vehicle.SetTireType(veh.TireModelType_RIGID)
-        self.vehicle.SetTireStepSize(self.step_size)
-        self.vehicle.SetInitFwdVel(0.0)
+        self.vehicle.SetBrakeType(veh.BrakeType_SIMPLE)
         
         # Initialize position and orientation
         self.init_loc, self.init_rot, self.init_yaw = self.initialize_vw_pos(
@@ -37,18 +36,14 @@ class HMMWVManager:
         # Initialize the vehicle
         self.vehicle.Initialize()
         
-        # Configure differentials
-        self.vehicle.LockAxleDifferential(0, True)    
-        self.vehicle.LockAxleDifferential(1, True)
-        self.vehicle.LockCentralDifferential(0, True)
-        self.vehicle.GetVehicle().EnableRealtime(False)
-        
         # Set visualization types
         self.vehicle.SetChassisVisualizationType(veh.VisualizationType_MESH)
-        self.vehicle.SetWheelVisualizationType(veh.VisualizationType_MESH)
-        self.vehicle.SetTireVisualizationType(veh.VisualizationType_MESH)
+        self.vehicle.SetSprocketVisualizationType(veh.VisualizationType_MESH)
+        self.vehicle.SetIdlerVisualizationType(veh.VisualizationType_MESH)
+        self.vehicle.SetIdlerWheelVisualizationType(veh.VisualizationType_MESH)
         self.vehicle.SetSuspensionVisualizationType(veh.VisualizationType_PRIMITIVES)
-        self.vehicle.SetSteeringVisualizationType(veh.VisualizationType_PRIMITIVES)
+        self.vehicle.SetRoadWheelVisualizationType(veh.VisualizationType_MESH)
+        self.vehicle.SetTrackShoeVisualizationType(veh.VisualizationType_MESH)
         
         # Get chassis body
         self.chassis_body = self.vehicle.GetChassisBody()
@@ -69,7 +64,7 @@ class HMMWVManager:
             start_height = terrain_manager.high_res_data[pos_bmp_y, pos_bmp_x]
 
         # Set position with correct height
-        start_pos = (start_pos[0], start_pos[1], start_height * self.scale_factor + start_pos[2])
+        start_pos = (start_pos[0], start_pos[1], start_height * self.scale_factor + start_pos[2] - 1.0)
         
         # Calculate orientation based on direction to goal
         dx = goal_pos[0] - start_pos[0]
@@ -154,9 +149,9 @@ class HMMWVManager:
         """Get vehicle rotation in Euler angles"""
         return self.vehicle.GetVehicle().GetRot().GetCardanAnglesXYZ()
         
-    def synchronize(self, time, driver_inputs, terrain):
+    def synchronize(self, time, driver_inputs):
         """Synchronize vehicle with terrain"""
-        self.vehicle.Synchronize(time, driver_inputs, terrain)
+        self.vehicle.Synchronize(time, driver_inputs)
         
     def advance(self, step_size):
         """Advance vehicle simulation"""

@@ -2,7 +2,7 @@ import pychrono as chrono
 import pychrono.vehicle as veh
 import numpy as np
 
-class HMMWVManager:
+class GatorManager:
     def __init__(self, system, step_size=5e-3):
         self.system = system
         self.step_size = step_size
@@ -12,16 +12,14 @@ class HMMWVManager:
     
     def initialize_vehicle(self, start_pos, goal_pos, terrain_manager):
         """Initialize the HMMWV vehicle with specified parameters"""
-        self.vehicle = veh.HMMWV_Reduced(self.system)
+        self.vehicle = veh.Gator(self.system)
         
         # Set vehicle parameters
         self.scale_factor = terrain_manager.scale_factor
         self.vehicle.SetContactMethod(chrono.ChContactMethod_NSC)
         self.vehicle.SetChassisCollisionType(veh.CollisionType_PRIMITIVES)
         self.vehicle.SetChassisFixed(False)
-        self.vehicle.SetEngineType(veh.EngineModelType_SIMPLE_MAP)  # Higher max torques
-        self.vehicle.SetTransmissionType(veh.TransmissionModelType_AUTOMATIC_SIMPLE_MAP)
-        self.vehicle.SetDriveType(veh.DrivelineTypeWV_AWD)
+        self.vehicle.SetDrivelineType(veh.DrivelineTypeWV_AWD)
         self.vehicle.SetTireType(veh.TireModelType_RIGID)
         self.vehicle.SetTireStepSize(self.step_size)
         self.vehicle.SetInitFwdVel(0.0)
@@ -40,7 +38,6 @@ class HMMWVManager:
         # Configure differentials
         self.vehicle.LockAxleDifferential(0, True)    
         self.vehicle.LockAxleDifferential(1, True)
-        self.vehicle.LockCentralDifferential(0, True)
         self.vehicle.GetVehicle().EnableRealtime(False)
         
         # Set visualization types

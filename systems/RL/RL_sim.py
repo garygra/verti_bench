@@ -14,8 +14,6 @@ import argparse
 from PIL import Image
 import shutil
 
-from verti_bench.envs.terrain import TerrainManager
-from verti_bench.vehicles.HMMWV import HMMWVManager
 from verti_bench.rl.off_road_VertiBench import off_road_art
 from stable_baselines3 import PPO
 
@@ -37,6 +35,11 @@ class RLSim:
         self.max_time = config['max_time']
         self.speed = config['speed']
 
+        supported_vehicles = ['hmmwv']
+        if self.vehicle_type.lower() not in supported_vehicles:
+            raise ValueError(f"Unsupported vehicle type: {self.vehicle_type}, "
+                             f"only support {supported_vehicles[0]} for RL-based systems!")
+        
         # RL specific attributes
         self.env = None
         self.model = None
