@@ -11,9 +11,7 @@ Robotics: Science and Systems (RSS) 2025
 [[Video]](https://www.youtube.com/watch?v=O9VlMg3tnvo)
 
 <p align="center">
-    <img src="assets/gmu.png" height="35"> 
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-    <img src="assets/RobotiXX_gmu.gif" height="35">
+    <img src="assets/gmu.png" height="35"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="assets/RobotiXX_gmu.gif" height="35">
 </p>
 
 
