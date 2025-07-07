@@ -64,7 +64,7 @@ class M113Manager:
             start_height = terrain_manager.high_res_data[pos_bmp_y, pos_bmp_x]
 
         # Set position with correct height
-        start_pos = (start_pos[0], start_pos[1], start_height * self.scale_factor + start_pos[2] - 1.0)
+        start_pos = (start_pos[0], start_pos[1], start_height * self.scale_factor + start_pos[2])
         
         # Calculate orientation based on direction to goal
         dx = goal_pos[0] - start_pos[0]
