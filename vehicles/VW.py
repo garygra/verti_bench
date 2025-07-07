@@ -148,6 +148,10 @@ class VWManager:
         """Get current vehicle position"""
         return self.vehicle.GetVehicle().GetPos()
     
+    def get_speed(self):
+        """Get current vehicle speed"""
+        return self.vehicle.GetVehicle().GetSpeed()
+    
     def get_rotation(self):
         """Get vehicle rotation in Euler angles"""
         return self.vehicle.GetVehicle().GetRot().GetCardanAnglesXYZ()
@@ -163,3 +167,9 @@ class VWManager:
     def get_chassis_body(self):
         """Get vehicle chassis body"""
         return self.chassis_body
+
+    def change_gear(self, gear):
+        """Change the vehicle transmission gear"""
+        transmission = self.vehicle.GetVehicle().GetTransmission()
+        transmission.SetGear(gear)
+    

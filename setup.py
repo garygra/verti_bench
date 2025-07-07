@@ -24,6 +24,7 @@ from verti_bench.systems.WMVCT.WMVCT_sim import WMVCTSim
 from verti_bench.systems.MPPI6.MPPI6_sim import MPPI6Sim
 from verti_bench.systems.TAL.TAL_sim import TALSim
 from verti_bench.systems.TNT.TNT_sim import TNTSim
+from verti_bench.systems.Manual.Manual_sim import ManualSim
 
 def single_experiment(config):
     """Run a single simulation experiment"""
@@ -48,6 +49,8 @@ def single_experiment(config):
         sim = TALSim(config)
     elif config['system'] == 'tnt':
         sim = TNTSim(config)
+    elif config['system'] == 'manual':
+        sim = ManualSim(config)
     sim.initialize()
     
     # Run simulation

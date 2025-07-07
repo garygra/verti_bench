@@ -29,6 +29,7 @@ Robotics: Science and Systems (RSS) 2025
 - [x] Release code pipeline
 - [x] Release ten off-road mobility systems
 - [x] Release different scale vehicles
+- [x] Release manual controller by Logitech G29 Driving Force Racing Wheel and Floor Pedals
 - [ ] Release datasets from expert demonstration, random exploration, failure cases
 
 # Introduction
@@ -89,6 +90,7 @@ pip uninstall numpy
 conda install -c conda-forge numpy=1.24.0
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 pip install pyyaml scipy
+pip install evdev
 ```
 
 - Irrlicht, for run-time visualization
@@ -197,6 +199,7 @@ pip uninstall numpy
 conda install -c conda-forge numpy=1.24.0
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 pip install pyyaml scipy
+pip install evdev
 ```
 - **Deactivate conda virtual env** to allow system-wide installation of MPI (Message Passing Interface) for `Chrono::Synchrono` and `Chrono::Vehicle` modules
 ```
@@ -573,7 +576,7 @@ In the folder `envs/utils`, we have provided SWAE model called **BenchGen.pth** 
 ### Ten Systems in Verti-Bench
 Run our provided ten mobility systems (no task has been used for training) in the 1000 Verti-Bench navigation tasks with prebuilt envs from YAML.
 
-Full Version:
+Full Version by systems:
 ```
 python setup.py vehicle=hmmwv system=pid speed=4.0 world_id=1 scale_factor=1.0 max_time=60 num_experiments=1 render=true use_gui=false
 ```
@@ -582,7 +585,12 @@ python setup.py vehicle=hmmwv system=pid speed=4.0 world_id=1 scale_factor=1.0 m
 - vehicle: hmmwv (default), gator, feda, man5t, man7t, man10t, m113, art, vw
 - scale_factor: 1.0 (default), 1/6, 1/10
 
-Simplified Version:
+Manual Controller Version by Logitech G29: (change vehicle direction by pressing red `Enter` button from forward to backward or vice versa)
+```
+python setup.py vehicle=hmmwv system=manual speed=4.0 world_id=1 scale_factor=1.0 max_time=60 num_experiments=1 render=true use_gui=true
+```
+
+Simplified Version by systems:
 ```
 python setup.py
 ```
