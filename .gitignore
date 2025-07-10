@@ -51,6 +51,7 @@ logs/
 /envs/utils/gen_bumpyBMP.ipynb
 /envs/utils/gen_DataSet.ipynb
 /envs/utils/transform.ipynb
+/envs/utils/check_traj.ipynb
 # VertiBench specific .py files
 /envs/utils/bitmap_gen.py
 /envs/utils/Failures.py
@@ -62,3 +63,4 @@ logs/
 /envs/data/BenchMaps/sampled_maps/TestWorlds/*
 /envs/data/BenchMaps/sampled_maps/Configs/tmp/*
 assets/pychrono-9.0.1-py39_1.tar.bz2
+/envs/data/BenchMaps/sampled_maps/Trajs/*

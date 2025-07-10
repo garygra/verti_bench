@@ -30,6 +30,7 @@ Robotics: Science and Systems (RSS) 2025
 - [x] Release ten off-road mobility systems
 - [x] Release different scale vehicles
 - [x] Release manual controller by Logitech G29 Driving Force Racing Wheel and Floor Pedals
+- [x] Release semantic maps for each world
 - [ ] Release datasets from expert demonstration, random exploration, failure cases
 
 # Introduction
@@ -572,6 +573,8 @@ In the folder `envs/utils`, we have provided SWAE model called **BenchGen.pth** 
 - `SWAE_gen.ipynb`: Researchers can utilize this model to generate millions of different terrain geometry as they wanted.
 - `preHeight-VertiBench.py`: Utilize single terrain patch to query mesh height and save as .npy following BMP coordinate before generating customed env's params.  
 - `gen-VertiBench.py`: Generate and store params for rigid and deformable terrain commonly encountered in off-road environments with realistic physical properties under `envs/data/BenchMaps/sampled_maps/Configs/Custom`. To visualize the simulation results, change code to `run_simulation(render=True)`.
+- `postSemantic.py`: Generate semantic ground truth maps for each world.
+- `gather_trajectories.py`: Gather trajectories for each world.
 
 ### Ten Systems in Verti-Bench
 Run our provided ten mobility systems (no task has been used for training) in the 1000 Verti-Bench navigation tasks with prebuilt envs from YAML.
