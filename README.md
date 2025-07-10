@@ -574,7 +574,7 @@ In the folder `envs/utils`, we have provided SWAE model called **BenchGen.pth** 
 - `preHeight-VertiBench.py`: Utilize single terrain patch to query mesh height and save as .npy following BMP coordinate before generating customed env's params.  
 - `gen-VertiBench.py`: Generate and store params for rigid and deformable terrain commonly encountered in off-road environments with realistic physical properties under `envs/data/BenchMaps/sampled_maps/Configs/Custom`. To visualize the simulation results, change code to `run_simulation(render=True)`.
 - `postSemantic.py`: Generate semantic ground truth maps for each world.
-- `gather_trajectories.py`: Gather trajectories for each world.
+- `gather_trajectories.py`: Gather trajectories by PID controller for each world without obstacles.
 
 ### Ten Systems in Verti-Bench
 Run our provided ten mobility systems (no task has been used for training) in the 1000 Verti-Bench navigation tasks with prebuilt envs from YAML.
