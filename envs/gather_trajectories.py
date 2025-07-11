@@ -126,6 +126,20 @@ class PIDController:
         self.previous_error = error
         return output
 
+class SineSteer:
+    def __init__(self, freq):
+        self.freq = freq
+
+    def advance(self, t): # sin(wt)
+        return np.sin(self.freq * t) # [-1, 1]
+
+class SineSpeed:
+    def __init__(self, freq):
+        self.freq = freq
+
+    def advance(self, t):
+        return 2.0 * (np.sin(self.freq * t) + 1.0) # [0, 4]
+
 class AStarPlanner:
     def __init__(self, grid_map, start, goal, resolution=1.0):
         self.grid_map = grid_map
@@ -646,12 +660,12 @@ def save_cropped_maps(elevation_map, semantic_map, timestr, timestep):
         elevation_normalized = np.zeros_like(elevation_map, dtype=np.uint8)
         
     elev_image = Image.fromarray(elevation_normalized, mode='L')
-    elev_filename = f"elev_{timestep:05d}.bmp"
+    elev_filename = f"elev_{timestep:04d}.bmp"
     elev_path = os.path.join(elev_dir, elev_filename)
     elev_image.save(elev_path, format="BMP")
     
     sem_image = Image.fromarray(semantic_map, mode='RGB')
-    sem_filename = f"sem_{timestep:05d}.png"
+    sem_filename = f"sem_{timestep:04d}.png"
     sem_path = os.path.join(sem_dir, sem_filename)
     sem_image.save(sem_path, format="PNG")
 
@@ -813,7 +827,8 @@ def terrain_patch_bmp(terrain_array, start_y, end_y, start_x, end_x, idx):
     
     return terrain_path
 
-def collect_traj(vehicle, driver_inputs, time, wait_time_before_log, last_log_time, log_dur, timestr):
+def collect_traj(vehicle, driver_inputs, time, wait_time_before_log, last_log_time, 
+                 log_dur, timestr, target_speed, target_steering):
     """
     Collect trajectory data for current timestep
     Returns state, action, and whether data was logged
@@ -833,9 +848,14 @@ def collect_traj(vehicle, driver_inputs, time, wait_time_before_log, last_log_ti
         pitch_rate = vehicle.GetVehicle().GetPitchRate() 
         yaw_rate = vehicle.GetVehicle().GetYawRate()
         
-        # Get vehicle speed
-        speed = vehicle.GetVehicle().GetSpeed()
+        # Get real vehicle control inputs
+        real_speed = vehicle.GetVehicle().GetSpeed()
         
+        left_steer_angle = vehicle.GetVehicle().GetSteeringAngle(0, 0) 
+        right_steer_angle = vehicle.GetVehicle().GetSteeringAngle(0, 1)
+        avg_steer_angle = (left_steer_angle + right_steer_angle) / 2.0
+        real_steering = np.clip(avg_steer_angle / vehicle.GetVehicle().GetMaxSteeringAngle(), -1.0, 1.0)
+
         # Get gear
         gear = vehicle.GetVehicle().GetTransmission().GetCurrentGear()
         
@@ -861,10 +881,12 @@ def collect_traj(vehicle, driver_inputs, time, wait_time_before_log, last_log_ti
         timestep = int((time - wait_time_before_log) * log_freq) if time >= wait_time_before_log else 0
         save_cropped_maps(under_vehicle_elev, under_vehicle_sem, timestr, timestep)
     
-        # Action: (steering, speed, throttle, brake, gear)
+        # Action: (steer, speed, throttle, brake, gear)
         action = {
-            'steering': driver_inputs.m_steering,
-            'speed': speed,
+            'target_steer': target_steering,
+            'real_steer': real_steering,
+            'target_speed': target_speed,
+            'real_speed': real_speed,
             'throttle': driver_inputs.m_throttle,
             'brake': driver_inputs.m_braking,
             'gear': gear
@@ -1463,6 +1485,13 @@ def run_simulation(render=False, use_gui=False, m_isFlat = False, is_rigid=False
     m_vis_dur = 1.0 / m_vis_freq
     last_vis_time = 0.0
     
+    # Control paras
+    last_control_time = 0.0
+    sine_steering = SineSteer(steering_freq)
+    sine_speed = SineSpeed(speed_freq)   
+    target_speed = 0.0
+    target_steering = 0.0
+    
     # Trajectory logging setup
     last_log_time = None
     traj_data = []
@@ -1628,7 +1657,8 @@ def run_simulation(render=False, use_gui=False, m_isFlat = False, is_rigid=False
         
         # Collect trajs
         state, action, logged, last_log_time = collect_traj(
-            m_vehicle, m_driver_inputs, time, wait_time_before_log, last_log_time, log_dur, timestr
+            m_vehicle, m_driver_inputs, time, wait_time_before_log, last_log_time, 
+            log_dur, timestr, target_speed, target_steering
         )
         if logged:
             traj_data.append((state, action))
@@ -1652,52 +1682,62 @@ def run_simulation(render=False, use_gui=False, m_isFlat = False, is_rigid=False
             
         if use_gui:
             m_driver_inputs = m_driver.GetInputs()
-        else:        
-            euler_angles = m_vehicle.GetVehicle().GetRot().GetCardanAnglesXYZ() #Global coordinate
-            vehicle_heading = euler_angles.z
+        else:       
             
-            # if time - last_replan_time >= replan_interval:
-            #     print("Replanning path...")
-            #     new_path = astar_replan(
-            #         obs_path,
-            #         (m_vehicle_pos.x, m_vehicle_pos.y),
-            #         (m_goal.x, m_goal.y)
-            #     )
+            if last_control_time == 0 or (time - last_control_time) >= m_control_dur: 
+                euler_angles = m_vehicle.GetVehicle().GetRot().GetCardanAnglesXYZ() #Global coordinate
+                vehicle_heading = euler_angles.z
+            
+                # if time - last_replan_time >= replan_interval:
+                #     print("Replanning path...")
+                #     new_path = astar_replan(
+                #         obs_path,
+                #         (m_vehicle_pos.x, m_vehicle_pos.y),
+                #         (m_goal.x, m_goal.y)
+                #     )
+                    
+                #     if new_path is not None:
+                #         chrono_path = new_path
+                #         local_goal_idx = 0
+                #         print("Path replanned successfully")
+                #     else:
+                #         print("Failed to replan path!")
+                    
+                #     last_replan_time = time
                 
-            #     if new_path is not None:
-            #         chrono_path = new_path
-            #         local_goal_idx = 0
-            #         print("Path replanned successfully")
-            #     else:
-            #         print("Failed to replan path!")
+                # local_goal_idx, local_goal = find_local_goal(
+                #     (m_vehicle_pos.x, m_vehicle_pos.y), 
+                #     vehicle_heading, 
+                #     chrono_path, 
+                #     local_goal_idx
+                # )
                 
-            #     last_replan_time = time
-            
-            # local_goal_idx, local_goal = find_local_goal(
-            #     (m_vehicle_pos.x, m_vehicle_pos.y), 
-            #     vehicle_heading, 
-            #     chrono_path, 
-            #     local_goal_idx
-            # )
-            
-            # goal_heading = np.arctan2(local_goal[1] - m_vehicle_pos.y, local_goal[0] - m_vehicle_pos.x)
-            goal_heading = np.arctan2(m_goal.y - m_vehicle_pos.y, m_goal.x - m_vehicle_pos.x)
-            heading_error = (goal_heading - vehicle_heading + np.pi) % (2 * np.pi) - np.pi
-            
-            #PID controller for steering
-            steering = -m_steeringController.compute(heading_error, m_step_size)
-            m_driver_inputs.m_steering = np.clip(steering, m_driver_inputs.m_steering - 0.05, 
-                                                 m_driver_inputs.m_steering + 0.05)
-            
-            # Desired throttle/braking value
-            out_throttle = m_speedController.Advance(m_vehicle.GetVehicle().GetRefFrame(), speed, time, m_step_size)
-            out_throttle = np.clip(out_throttle, -1, 1)
-            if out_throttle > 0:
-                m_driver_inputs.m_braking = 0
-                m_driver_inputs.m_throttle = out_throttle
-            else:
-                m_driver_inputs.m_braking = -out_throttle
-                m_driver_inputs.m_throttle = 0
+                # goal_heading = np.arctan2(local_goal[1] - m_vehicle_pos.y, local_goal[0] - m_vehicle_pos.x)
+                # goal_heading = np.arctan2(m_goal.y - m_vehicle_pos.y, m_goal.x - m_vehicle_pos.x)
+                # heading_error = (goal_heading - vehicle_heading + np.pi) % (2 * np.pi) - np.pi
+                
+                # Generate sine wave inputs
+                target_steering = sine_steering.advance(time)
+                target_speed = sine_speed.advance(time)
+                
+                #PID controller for steering
+                # steering = -m_steeringController.compute(heading_error, m_control_dur)
+                m_driver_inputs.m_steering = np.clip(target_steering, 
+                                                     m_driver_inputs.m_steering - m_steeringDelta, 
+                                                     m_driver_inputs.m_steering + m_steeringDelta)
+                target_steering = m_driver_inputs.m_steering
+                
+                # Desired throttle/braking value
+                out_throttle = m_speedController.Advance(m_vehicle.GetVehicle().GetRefFrame(), target_speed, time, m_control_dur)
+                out_throttle = np.clip(out_throttle, -1, 1)
+                if out_throttle > 0:
+                    m_driver_inputs.m_braking = 0
+                    m_driver_inputs.m_throttle = out_throttle
+                else:
+                    m_driver_inputs.m_braking = -out_throttle
+                    m_driver_inputs.m_throttle = 0
+                    
+                last_control_time = time
         
         current_position = (m_vehicle_pos.x, m_vehicle_pos.y, m_vehicle_pos.z)
         
@@ -1748,6 +1788,24 @@ def run_simulation(render=False, use_gui=False, m_isFlat = False, is_rigid=False
                 vis.Quit()
                 
             return time - start_time, True
+        
+        if (abs(m_vehicle_pos.x) >= m_terrain_length * 0.97 or abs(m_vehicle_pos.y) >= m_terrain_width * 0.97):
+            print('--------------------------------------------------------------')
+            print('Vehicle out of bounds!')
+            print(f'Vehicle position: ({m_vehicle_pos.x:.2f}, {m_vehicle_pos.y:.2f})')
+            print(f'Terrain bounds: X = ±{m_terrain_length:.2f}, Y = ±{m_terrain_width:.2f}')
+            print(f'Initial position: {m_initLoc}')
+            print(f'Goal position: {m_goal}')
+            print(f'Distance to goal: {m_vector_to_goal.Length():.2f} m')
+            print('--------------------------------------------------------------')
+            
+            if traj_data:
+                save_traj(traj_data, world_id, pos_id, timestr)
+            
+            if render:
+                vis.Quit()
+                
+            return time - start_time, False
         
         if m_system.GetChTime() > m_max_time:
             print('--------------------------------------------------------------')
@@ -1801,7 +1859,18 @@ if __name__ == '__main__':
     m_max_time = 60
     m_step_size = 5e-3 # sim: 200Hz
     wait_time_before_log = 1.0 # robot has to be dropped first
-    log_freq = 50.0 # Hz
+    
+    # Control and dynamics frequency
+    m_control_freq = 20.0 # Hz
+    m_control_dur = 1.0 / m_control_freq
+    
+    # Control oscillation rate
+    steering_freq = 0.5
+    speed_freq = 2.5
+    m_steeringDelta = 0.025 # At max the steering can change by 0.025 in 0.05 seconds
+    
+    # Log data
+    log_freq = 20.0 # Hz
     log_dur = 1.0 / log_freq
     
     # Path Plan Paras
