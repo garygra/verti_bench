@@ -31,7 +31,7 @@ Robotics: Science and Systems (RSS) 2025
 - [x] Release different scale vehicles
 - [x] Release manual controller by Logitech G29 Driving Force Racing Wheel and Floor Pedals
 - [x] Release semantic maps for each world
-- [x] Release datasets version 1.0 from sinusoidal random exploration on the website
+- [x] Release [datasets version 1.0](https://dataverse.orc.gmu.edu/dataset.xhtml?persistentId=doi:10.13021/ORC2020/TIDSD3) from sinusoidal random exploration on the website
 
 # Introduction
 Verti-Bench, a general and scalable off-road mobility benchmark that focuses on extremely rugged, vertically challenging terrain with a variety of unstructured off-road features. The main goal of Verti-Bench is to directly compare the performances of different off-road mobility systems. Based on a high-fidelity multi-physics
